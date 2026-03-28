@@ -4,3 +4,6 @@
 [submodule "semestre-1/mcic-math-tools-data"]
 	path = semestre-1/mcic-math-tools-data
 	url = git@github.com:Juferoga/mcic-math-tools-data.git
+[submodule "semestre-1/mcic-data-analytics"]
+	path = semestre-1/mcic-data-analytics
+	url = git@github.com:Juferoga/mcic-data-analytics.git
