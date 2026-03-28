@@ -11,3 +11,4 @@
 
 - [semestre-1/mcic-computing/README.md](semestre-1/mcic-computing/README.md)
 - [semestre-1/mcic-math-tools-data/README.md](semestre-1/mcic-math-tools-data/README.md)
+ - [semestre-1/mcic-data-analytics/README.md](semestre-1/mcic-data-analytics/README.md)
