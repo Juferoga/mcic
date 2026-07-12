@@ -1,1 +1,10 @@
+# Vista previa local del sitio (regenerar: mkdocs build --no-directory-urls -d .site-preview)
 .site-preview/
+site/
+
+# Sistema y Python
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+venv/

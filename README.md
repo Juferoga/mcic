@@ -1,7 +1,7 @@
 # 🎓 MCIC — Maestría en Ciencias de la Información y las Comunicaciones
 
 <p align="center">
-	<img src=".general-assets/mcic-logo.jpeg" alt="MCIC logo" width="600" />
+	<img src="docs/assets/mcic-logo.png" alt="MCIC logo" width="600" />
 </p>
 
 <p align="center">
