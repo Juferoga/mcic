@@ -10,6 +10,7 @@
 	<img src="https://img.shields.io/badge/Énfasis-Inteligencia_Artificial-6f42c1?style=flat-square" alt="Énfasis IA"/>
 	<img src="https://img.shields.io/badge/Modalidad-Investigación-2e74b5?style=flat-square" alt="Investigación"/>
 	<img src="https://img.shields.io/badge/Créditos-16%2F44-success?style=flat-square" alt="Créditos"/>
+	<a href="https://juferoga.github.io/mcic/"><img src="https://img.shields.io/badge/📖_Documentación-GitHub_Pages-blueviolet?style=flat-square" alt="Docs"/></a>
 </p>
 
 Compendio de materiales, trabajos y resultados de la **Maestría en Ciencias de la Información y las Comunicaciones** de la Universidad Distrital Francisco José de Caldas — énfasis en **Inteligencia Artificial**, modalidad **investigación**.
