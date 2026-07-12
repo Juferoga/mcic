@@ -1,13 +1,13 @@
-# 💻 Informática
+# Informática
 
-![Nota](https://img.shields.io/badge/Nota-4.6-success?style=flat-square) ![Créditos](https://img.shields.io/badge/Créditos-4-blue?style=flat-square) [![Repo](https://img.shields.io/badge/Repo-mcic--computing-181717?style=flat-square&logo=github)](https://github.com/Juferoga/mcic-computing)
-
-**Docente:** Álvaro Enrique Ortiz Dávila · **Código:** 79501002 · **Período:** 2026-1
+<p class="meta"><b>Nota</b> 4.6 · <b>Créditos</b> 4 · <b>Docente</b> Álvaro Enrique Ortiz Dávila · <b>Código</b> 79501002 · <a href="https://github.com/Juferoga/mcic-computing">Repositorio</a></p>
 
 Diseño arquitectural de software y patrones: estilos arquitectónicos, patrones de diseño y su aplicación en sistemas de información.
 
 ## Contenido del repositorio
 
-- `Talleres/` — talleres de patrones y arquitectura
-- `Tareas/` — tareas del curso
-- `ProyectoFinal/` — proyecto final de diseño arquitectural
+| Carpeta | Contenido |
+|---------|-----------|
+| `Talleres/` | Talleres de patrones y arquitectura |
+| `Tareas/` | Tareas del curso |
+| `ProyectoFinal/` | Proyecto final de diseño arquitectural |

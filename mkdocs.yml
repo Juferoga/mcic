@@ -7,9 +7,12 @@ repo_name: Juferoga/mcic
 
 theme:
   name: material
+  font:
+    text: Inter
+    code: JetBrains Mono
   language: es
-  logo: assets/mcic-logo.jpeg
-  favicon: assets/mcic-logo.jpeg
+  logo: assets/mcic-logo.png
+  favicon: assets/mcic-logo.png
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -44,6 +47,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
 
 extra:
   social:

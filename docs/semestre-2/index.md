@@ -1,10 +1,9 @@
-# 📝 Semestre II — 2026-3
+# Semestre II — 2026-3
 
-![Estado](https://img.shields.io/badge/Estado-Preinscrito-yellow?style=flat-square)
+<p class="meta"><b>Estado</b> Preinscrito · <b>Créditos</b> 0 / 16 · <b>Inicio</b> 3 de agosto de 2026</p>
 
-```text
-░░░░░░░░░░  0 / 16 créditos · inicia el 3 de agosto de 2026
-```
+<div class="pbar"><span style="width:0%"></span></div>
+<p class="pbar-label">0 / 16 créditos</p>
 
 | Materia | Componente | Créditos |
 |---------|------------|:--------:|

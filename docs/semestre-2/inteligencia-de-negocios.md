@@ -1,9 +1,7 @@
-# 📈 Inteligencia de Negocios
+# Inteligencia de Negocios
 
-![Estado](https://img.shields.io/badge/Estado-Preinscrita-yellow?style=flat-square) ![Créditos](https://img.shields.io/badge/Créditos-4-blue?style=flat-square)
-
-**Componente:** Electiva I · **Período:** 2026-3
+<p class="meta"><b>Estado</b> Preinscrita · <b>Créditos</b> 4 · <b>Componente</b> Electiva I · <b>Período</b> 2026-3</p>
 
 Bodegas de datos, ETL y analítica orientada a la toma de decisiones organizacionales.
 
-*Repositorio y materiales por crear al iniciar el semestre.*
+Repositorio y materiales por crear al iniciar el semestre.

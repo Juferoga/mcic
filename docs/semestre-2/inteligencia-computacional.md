@@ -1,9 +1,7 @@
-# 🧠 Inteligencia Computacional
+# Inteligencia Computacional
 
-![Estado](https://img.shields.io/badge/Estado-Preinscrita-yellow?style=flat-square) ![Créditos](https://img.shields.io/badge/Créditos-4-blue?style=flat-square)
-
-**Componente:** Profundización II · **Período:** 2026-3
+<p class="meta"><b>Estado</b> Preinscrita · <b>Créditos</b> 4 · <b>Componente</b> Profundización II · <b>Período</b> 2026-3</p>
 
 Técnicas de inteligencia computacional: redes neuronales, computación evolutiva y sistemas difusos. Directamente conectada con los modelos generativos de la tesis.
 
-*Repositorio y materiales por crear al iniciar el semestre.*
+Repositorio y materiales por crear al iniciar el semestre.

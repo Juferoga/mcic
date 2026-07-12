@@ -1,10 +1,9 @@
-# 📚 Semestre I — 2026-1
+# Semestre I — 2026-1
 
-![Estado](https://img.shields.io/badge/Estado-Cerrado-success?style=flat-square) ![Promedio](https://img.shields.io/badge/Promedio-4.73-blueviolet?style=flat-square)
+<p class="meta"><b>Estado</b> Cerrado · <b>Créditos</b> 16 / 16 · <b>Promedio</b> 4.73</p>
 
-```text
-██████████  16 / 16 créditos
-```
+<div class="pbar"><span style="width:100%"></span></div>
+<p class="pbar-label">16 / 16 créditos aprobados</p>
 
 | Materia | Docente | Nota |
 |---------|---------|:----:|

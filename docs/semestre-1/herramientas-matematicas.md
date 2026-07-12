@@ -1,14 +1,14 @@
-# 📐 Herramientas Matemáticas para el Manejo de la Información
+# Herramientas Matemáticas para el Manejo de la Información
 
-![Nota](https://img.shields.io/badge/Nota-4.7-success?style=flat-square) ![Créditos](https://img.shields.io/badge/Créditos-4-blue?style=flat-square) [![Repo](https://img.shields.io/badge/Repo-mcic--math--tools--data-181717?style=flat-square&logo=github)](https://github.com/Juferoga/mcic-math-tools-data)
-
-**Docente:** Hans Igor López Chávez · **Código:** 79501001 · **Período:** 2026-1
+<p class="meta"><b>Nota</b> 4.7 · <b>Créditos</b> 4 · <b>Docente</b> Hans Igor López Chávez · <b>Código</b> 79501001 · <a href="https://github.com/Juferoga/mcic-math-tools-data">Repositorio</a></p>
 
 Fundamentos matemáticos para el tratamiento de la información: álgebra lineal aplicada, estadística y modelado para ciencia de datos.
 
 ## Contenido del repositorio
 
-- `0.Bibliografia/` — material de referencia del curso
-- `1.Tareas/` — ejercicios individuales
-- `2.Talleres/` — talleres aplicados
-- `3.Trabajos/` — trabajos principales (incluye análisis de la Liga con validaciones estadísticas)
+| Carpeta | Contenido |
+|---------|-----------|
+| `0.Bibliografia/` | Material de referencia del curso |
+| `1.Tareas/` | Ejercicios individuales |
+| `2.Talleres/` | Talleres aplicados |
+| `3.Trabajos/` | Trabajos principales, incluido el análisis de la Liga con validación estadística |
