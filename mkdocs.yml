@@ -1,0 +1,74 @@
+site_name: MCIC · Juferoga
+site_description: Maestría en Ciencias de la Información y las Comunicaciones — Universidad Distrital Francisco José de Caldas
+site_author: Juan Felipe Rodríguez Galindo
+site_url: https://juferoga.github.io/mcic/
+repo_url: https://github.com/Juferoga/mcic
+repo_name: Juferoga/mcic
+
+theme:
+  name: material
+  font:
+    text: Inter
+    code: JetBrains Mono
+  language: es
+  logo: assets/mcic-logo.png
+  favicon: assets/mcic-logo.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Juferoga
+
+nav:
+  - Inicio: index.md
+  - Semestre I:
+      - Resumen: semestre-1/index.md
+      - Herramientas Matemáticas: semestre-1/herramientas-matematicas.md
+      - Informática: semestre-1/informatica.md
+      - Seminario de Investigación: semestre-1/seminario-investigacion.md
+      - Analítica de Datos: semestre-1/analitica-de-datos.md
+  - Semestre II:
+      - Resumen: semestre-2/index.md
+      - Inteligencia Computacional: semestre-2/inteligencia-computacional.md
+      - Computación Paralela: semestre-2/computacion-paralela.md
+      - Inteligencia de Negocios: semestre-2/inteligencia-de-negocios.md
+      - Trabajo de Grado I: semestre-2/trabajo-de-grado-1.md
+  - Tesis: tesis.md
+  - Perfil: perfil.md

@@ -1,0 +1,120 @@
+/* ============================================================
+   MCIC · Swiss Style / International Typographic Style
+   Paleta: negro #111 · blanco #FFF · beige #F5F1E8 · gris #808080 · taupe #B38B6D
+   ============================================================ */
+
+:root {
+  --swiss-black: #111111;
+  --swiss-white: #ffffff;
+  --swiss-beige: #f5f1e8;
+  --swiss-grey:  #808080;
+  --swiss-taupe: #b38b6d;
+}
+
+/* ---- Paleta clara ---- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--swiss-white);
+  --md-primary-bg-color: var(--swiss-black);
+  --md-accent-fg-color: var(--swiss-taupe);
+  --md-typeset-a-color: var(--swiss-black);
+  --md-default-bg-color: var(--swiss-white);
+  --swiss-rule: #e3ddcf;
+  --swiss-soft: var(--swiss-beige);
+}
+
+/* ---- Paleta oscura ---- */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #141414;
+  --md-primary-fg-color: #141414;
+  --md-primary-bg-color: var(--swiss-white);
+  --md-accent-fg-color: var(--swiss-taupe);
+  --md-typeset-a-color: var(--swiss-white);
+  --swiss-rule: #2e2e2e;
+  --swiss-soft: #1d1c1a;
+}
+
+/* ---- Header plano con regla inferior ---- */
+.md-header { box-shadow: none; border-bottom: 1px solid var(--swiss-rule); }
+.md-header__button.md-logo img { border-radius: 0; }
+.md-tabs { border-bottom: 1px solid var(--swiss-rule); }
+
+/* ---- Tipografía ---- */
+.md-typeset h1 { font-weight: 700; letter-spacing: -0.02em; color: inherit; }
+.md-typeset h2 { font-weight: 700; letter-spacing: -0.01em; margin-top: 2.4rem; }
+.md-typeset a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.md-typeset a:hover { color: var(--swiss-taupe); }
+
+.label-caps {
+  display: block; font-size: .72rem; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--swiss-grey);
+  margin-bottom: .6rem;
+}
+
+/* Línea de metadatos bajo títulos */
+.meta { font-size: .78rem; color: var(--swiss-grey); border-top: 1px solid var(--swiss-rule); border-bottom: 1px solid var(--swiss-rule); padding: .55rem 0; }
+.meta b { color: var(--md-typeset-a-color); font-weight: 600; }
+
+/* ---- Hero dividido: texto izquierda, visual derecha ---- */
+.swiss-hero {
+  display: grid; grid-template-columns: 3fr 2fr; gap: 3rem; align-items: center;
+  padding: 3.2rem 0 2.6rem;
+}
+.swiss-hero h1 {
+  font-size: clamp(2.2rem, 4.6vw, 3.3rem); line-height: 1.05;
+  font-weight: 700; letter-spacing: -0.02em; margin: 0 0 1rem;
+}
+.swiss-hero p.lead { font-size: 1rem; line-height: 1.6; color: var(--swiss-grey); max-width: 34rem; margin: 0; }
+.swiss-hero .visual { text-align: center; background: var(--swiss-beige); padding: 2.4rem 1.6rem; border: 1px solid var(--swiss-rule); }
+.swiss-hero .visual img { max-width: 100%; border-radius: 0; display: block; margin: 0 auto; }
+@media (max-width: 48em) { .swiss-hero { grid-template-columns: 1fr; gap: 1.6rem; } }
+
+/* ---- Fila de estadísticas con reglas tipográficas ---- */
+.swiss-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 2px solid currentColor; margin: 2.2rem 0;
+}
+.swiss-stats .stat { padding: 1.2rem 1.4rem 1.3rem; border-right: 1px solid var(--swiss-rule); }
+.swiss-stats .stat:first-child { padding-left: 0; }
+.swiss-stats b { margin-bottom: .3rem; }
+.swiss-stats .stat:last-child { border-right: none; }
+.swiss-stats b { display: block; font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+.swiss-stats span { font-size: .72rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--swiss-grey); }
+@media (max-width: 48em) { .swiss-stats { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---- Barras de progreso ---- */
+.pbar { background: var(--swiss-soft); border: 1px solid var(--swiss-rule); height: 8px; overflow: hidden; margin: .4rem 0 .15rem; }
+.pbar > span { display: block; height: 100%; background: var(--swiss-taupe); transition: width .3s ease-out; }
+.pbar-label { font-size: .74rem; color: var(--swiss-grey); }
+
+/* ---- Filas de semestre ---- */
+.sem-row {
+  display: grid; grid-template-columns: 11rem 1fr 11rem; gap: 1.4rem; align-items: center;
+  padding: 1rem 0; border-top: 1px solid var(--swiss-rule); margin: 0;
+}
+.sem-list { border-bottom: 1px solid var(--swiss-rule); margin-bottom: 2rem; }
+.sem-row .name { font-weight: 700; }
+.sem-row .name a { text-decoration: none; }
+.sem-row .state { text-align: right; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--swiss-grey); }
+@media (max-width: 44em) { .sem-row { grid-template-columns: 1fr; gap: .5rem; } .sem-row .state { text-align: left; } }
+
+/* ---- Cards: bordes rectos, sombra sutil, hover contenido ---- */
+.md-typeset .grid.cards > ul > li {
+  border-radius: 0; border: 1px solid var(--swiss-rule);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out;
+}
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.10);
+  border-color: var(--swiss-taupe);
+}
+
+/* ---- Tablas ---- */
+.md-typeset table:not([class]) { border-radius: 0; box-shadow: none; border: 1px solid var(--swiss-rule); }
+.md-typeset table:not([class]) th { background: var(--swiss-soft); color: inherit; font-weight: 600; letter-spacing: .04em; }
+
+/* ---- Admoniciones planas ---- */
+.md-typeset .admonition, .md-typeset details { border-radius: 0; border-width: 1px; box-shadow: none; }
+
+/* ---- Footer ---- */
+.md-footer { border-top: 1px solid var(--swiss-rule); }
