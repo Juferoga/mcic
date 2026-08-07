@@ -19,3 +19,6 @@
 [submodule "semestre-2/mcic-trabajo-grado-1"]
 	path = semestre-2/mcic-trabajo-grado-1
 	url = git@github.com:Juferoga/mcic-trabajo-grado-1.git
+[submodule "general/session-recorder"]
+	path = general/session-recorder
+	url = git@github.com:Juferoga/session-recorder.git
