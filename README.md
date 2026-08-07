@@ -10,7 +10,7 @@ Este repositorio centraliza los materiales y resultados de la maestría. El plan
 
 ## Estructura propuesta
 - `semestre-1/` — materiales y submódulos del primer semestre. Ver [semestre-1/README.md](semestre-1/README.md).
-- `semestre-2/` — materiales del segundo semestre (por crear).
+- `semestre-2/` — materiales y submódulos del segundo semestre. Ver [semestre-2/README.md](semestre-2/README.md).
 - `semestre-3/` — materiales del tercer semestre (por crear).
 - `tesis/` — carpeta donde irá el proyecto y documentación de la tesis.
 
@@ -19,6 +19,14 @@ Los submódulos para el primer semestre ya están añadidos bajo `semestre-1`:
 
 - [semestre-1/mcic-computing/README.md](semestre-1/mcic-computing/README.md)
 - [semestre-1/mcic-math-tools-data/README.md](semestre-1/mcic-math-tools-data/README.md)
+- [semestre-1/mcic-data-analytics/README.md](semestre-1/mcic-data-analytics/README.md)
+
+Los submódulos para el segundo semestre están añadidos bajo `semestre-2`:
+
+- [semestre-2/mcic-computational-intelligence/README.md](semestre-2/mcic-computational-intelligence/README.md)
+- [semestre-2/mcic-business-intelligence/README.md](semestre-2/mcic-business-intelligence/README.md)
+- [semestre-2/mcic-parallel-computing/README.md](semestre-2/mcic-parallel-computing/README.md)
+- [semestre-2/mcic-trabajo-grado-1/README.md](semestre-2/mcic-trabajo-grado-1/README.md)
 
 ## Cómo contribuir / comandos útiles
 - Actualizar submódulos:
