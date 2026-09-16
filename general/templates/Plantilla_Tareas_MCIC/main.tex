@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,mexico]{babel}
+\setlength{\textwidth}{18cm}
+\setlength{\oddsidemargin}{-1cm}
+\setlength{\headsep}{-1cm}
+\setlength{\voffset}{0cm}
+\setlength{\topmargin}{0cm}
+\setlength{\headheight}{0cm}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows}
+\usepackage{multicol}
+\usepackage{lipsum} 
+
+\begin{document}
+
+\colorbox{white!10!}{
+    \begin{minipage}[t]{0.165 \textwidth}
+       \begin{flushright}
+        \includegraphics[width=0.7in]{EscudoUD.png}
+       \end{flushright}
+    \end{minipage}
+    \begin{minipage}[H]{0.62 \textwidth}
+        \begin{center}
+            {\large \textsc{Universdad Distrital Francisco José de Caldas}}
+            \vspace{0.6cm}
+            \\
+            { \huge \textbf{Tarea o taller \#}}
+            \\
+            \vspace{0.2cm}
+            \small{\textbf{Maestría en ciencias de la información y las comunicaciones}}\\
+            \textbf{Materia}
+            \begin{center}
+                \small Estudiante - Código
+            \end{center}
+        \end{center}
+        \vspace{0.05cm}
+    \end{minipage}
+    \begin{minipage}[t]{0.165\textwidth}
+        \raggedright
+        \includegraphics[width=1in]{LogoMCIC.png}
+    \end{minipage}
+}
+
+\begin{tikzpicture}
+    \draw[thick] (-6.5,0)--(11.2,0);
+\end{tikzpicture}
+
+\section{Introducción}
+    \begin{enumerate}
+        \item \lipsum[1-1]
+        
+        \item \lipsum[2-4]
+    \end{enumerate}
+
+\end{document}
