@@ -1,0 +1,39 @@
+% Ejemplo del tema UD. Compilar desde plantillas-latex/:  make ejemplos
+\documentclass[aspectratio=169,10pt]{beamer}
+\usepackage[spanish,es-noshorthands]{babel}
+\usetheme{UD}
+
+\begin{document}
+
+\UDportada{Título de la presentación}
+          {Subtítulo o asignatura}
+          {Juan Felipe Rodríguez Galindo\\{\fontsize{6.4pt}{7.4pt}\selectfont\mdseries\color{UDSilver}20261595004}}
+          {Maestría en Ciencias de la Información y las Comunicaciones}
+          {2026}
+
+\begin{frame}{Diapositiva con tarjetas}{Las columnas siempre con onlytextwidth}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \UDCard{white}{UDBorder}{\cardtitle{UDBlue}{Primera idea}{\small Texto de la tarjeta.}}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \UDCard{UDLightGray}{UDRed!60}{\cardtitle{UDRed}{Segunda idea}{\small Otro texto.}}
+    \end{column}
+  \end{columns}
+  \vspace{0.4cm}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.32cm]
+    \node[paso] (a) {\textbf{Paso 1}\\datos};
+    \node[paso, right=of a] (b) {\textbf{Paso 2}\\modelo};
+    \node[paso, right=of b, fill=UDRed!8, draw=UDRed] (c) {\textbf{Paso 3}\\resultado};
+    \draw[flecha] (a) -- (b); \draw[flecha] (b) -- (c);
+  \end{tikzpicture}
+  \end{center}
+  \note{Guion del presentador: no se imprime.}
+\end{frame}
+
+\UDcierre{Juan Felipe Rodríguez Galindo}
+         {Maestría en Ciencias de la Información\\y las Comunicaciones}
+         {Asignatura}
+
+\end{document}

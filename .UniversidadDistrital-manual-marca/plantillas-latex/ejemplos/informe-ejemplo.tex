@@ -1,0 +1,43 @@
+% Ejemplo del estilo de informe UD. Compilar desde plantillas-latex/:  make ejemplos
+\documentclass[11pt,letterpaper]{article}
+\usepackage{ud-informe}
+
+\renewcommand{\UDtitulo}{Título del informe}
+\renewcommand{\UDsubtitulo}{Subtítulo que explica el alcance}
+\renewcommand{\UDtipo}{Taller 1}
+\renewcommand{\UDasignatura}{Asignatura}
+\renewcommand{\UDdocente}{Nombre del docente}
+\renewcommand{\UDestudiantes}{Juan Felipe Rodríguez Galindo -- 20261595004}
+\renewcommand{\UDencabezado}{Taller 1 -- Asignatura}
+
+\begin{document}
+\UDportada
+\tableofcontents
+\newpage
+
+\section{Introducción}
+
+Texto del informe en Times New Roman; los títulos van en Cambria con el número en rojo institucional.
+
+\begin{table}[!htbp]
+\centering
+\caption{Una tabla de ejemplo.}
+\begin{tabularx}{\linewidth}{l L r}
+\toprule
+Columna & Descripción & Valor \\
+\midrule
+A & Texto que se ajusta al ancho disponible & 1,0 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[node distance=0.6cm]
+  \node[caja] (a) {Datos}; \node[caja, right=of a] (b) {Modelo}; \node[hecho, right=of b] (c) {Resultado};
+  \draw[flecha] (a) -- (b); \draw[flecha] (b) -- (c);
+\end{tikzpicture}
+\caption{Un diagrama con los estilos \texttt{caja}, \texttt{hecho} y \texttt{flecha}.}
+\end{figure}
+
+\end{document}

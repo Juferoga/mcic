@@ -1,0 +1,121 @@
+% ==============================================================================
+% Estilo de informe institucional - Universidad Distrital Francisco José de Caldas
+% Uso:  \documentclass[11pt,letterpaper]{article}
+%       \usepackage{ud-informe}
+% Compilar con tectonic (XeTeX):
+%       tectonic -Z search-path=<ruta>/plantillas-latex archivo.tex
+% Para otra ubicación del manual: \newcommand{\UDmarca}{/ruta} ANTES de \usepackage{ud-informe}.
+% ==============================================================================
+\ProvidesPackage{ud-informe}[2026/10/07 Informe institucional UD]
+
+\RequirePackage{fontspec}
+\RequirePackage[spanish,es-noshorthands,es-tabla,es-nodecimaldot]{babel}
+\RequirePackage[margin=2.3cm,headheight=14pt]{geometry}
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{xcolor}
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage{caption}
+\RequirePackage{float}
+\RequirePackage{enumitem}
+\RequirePackage{listings}
+\RequirePackage{microtype}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, fit}
+\RequirePackage[hidelinks,breaklinks=true]{hyperref}
+
+\providecommand{\UDmarca}{/Users/juferoga/repos/ud/maestria/mcic/.UniversidadDistrital-manual-marca}
+\newcommand{\UDfuentes}{\UDmarca/fuentes/}
+\newcommand{\UDassets}{\UDmarca/plantillas-latex/assets/}
+
+% --- Tipografía institucional: Times New Roman (cuerpo), Cambria (títulos) ---
+\setmainfont{times.ttf}[Path=\UDfuentes, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]
+\newfontfamily\cambria{cambria.ttc}[Path=\UDfuentes, BoldFont=cambriab.ttf, ItalicFont=cambriai.ttf, BoldItalicFont=cambriaz.ttf]
+
+% --- Paleta institucional ---
+\definecolor{udrojo}{HTML}{ED3237}
+\definecolor{udrojoosc}{HTML}{A61C22}
+\definecolor{uddorado}{HTML}{B49739}
+\definecolor{udazul}{HTML}{1291C0}
+\definecolor{udsable}{HTML}{373435}
+\definecolor{udplata}{HTML}{98999A}
+\definecolor{udfondo}{HTML}{F6F4EE}
+
+\hypersetup{colorlinks=true, linkcolor=udrojoosc, citecolor=udrojoosc, urlcolor=udazul}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlength{\emergencystretch}{2.5em}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.18}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\setlist{itemsep=0.15em, topsep=0.3em}
+
+% --- Datos del documento (se definen en el preámbulo del informe) ---
+\newcommand{\UDtitulo}{Título del informe}
+\newcommand{\UDsubtitulo}{}
+\newcommand{\UDtipo}{Informe}
+\newcommand{\UDasignatura}{Asignatura}
+\newcommand{\UDdocente}{Docente}
+\newcommand{\UDestudiantes}{Nombre -- Código}   % varias filas: Nombre 1 -- código \\ & Nombre 2 -- código
+\newcommand{\UDencabezado}{\UDtitulo}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\footnotesize\color{udplata}\UDencabezado}
+\rhead{\footnotesize\color{udplata}MCIC -- Universidad Distrital}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{udrojo}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\cambria\Large\bfseries\color{udsable}}{\color{udrojo}\thesection.}{0.5em}{}
+\titleformat{\subsection}{\cambria\large\bfseries\color{udsable}}{\color{udrojo}\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}{\cambria\normalsize\bfseries\color{udsable}}{}{0em}{}
+\captionsetup{font=small, labelfont={bf,color=udrojoosc}}
+
+\lstset{basicstyle=\ttfamily\footnotesize, breaklines=true, columns=fullflexible, frame=leftline,
+        rulecolor=\color{udrojo}, framerule=1.2pt, xleftmargin=8pt, backgroundcolor=\color{udfondo},
+        keywordstyle=\color{udazul}\bfseries, commentstyle=\color{udplata}\itshape, upquote=true}
+
+\tikzset{
+  caja/.style={draw=udsable!60, fill=white, rounded corners=2pt, align=center, font=\small, inner sep=5pt},
+  hecho/.style={caja, draw=udrojo, fill=udrojo!8, font=\small\bfseries},
+  flecha/.style={-{Latex[length=2mm]}, thick, color=udsable!70},
+}
+
+% --- Portada institucional ---
+\newcommand{\UDportada}{%
+  \begin{titlepage}
+    \centering
+    \vspace*{0.6cm}
+    \includegraphics[height=2.9cm]{\UDassets EscudoUD.png}\hfill
+    \includegraphics[height=2.3cm]{\UDassets LogoMCIC.png}
+    \vspace{1.8cm}
+
+    {\color{udrojo}\rule{\linewidth}{1.2pt}}\\[0.6cm]
+    {\cambria\LARGE\bfseries\color{udsable}\UDtitulo\par}
+    \ifx\UDsubtitulo\empty\else
+      \vspace{0.35cm}
+      {\cambria\large\color{udsable}\UDsubtitulo\par}
+    \fi
+    \vspace{0.3cm}
+    {\color{udrojo}\rule{\linewidth}{1.2pt}}\\[0.4cm]
+    {\itshape\UDtipo\par}
+
+    \vspace{1.8cm}
+    \begin{tabular}{>{\bfseries}l l}
+      Asignatura: & \UDasignatura \\
+      Docente: & \UDdocente \\
+      Estudiantes: & \UDestudiantes \\
+      Programa: & Maestría en Ciencias de la Información y las Comunicaciones \\
+      Fecha: & \today
+    \end{tabular}
+
+    \vfill
+    {\cambria\large\bfseries Universidad Distrital Francisco José de Caldas\par}
+    {\normalsize Facultad de Ingeniería -- Bogotá D.C., Colombia\par}
+  \end{titlepage}%
+}

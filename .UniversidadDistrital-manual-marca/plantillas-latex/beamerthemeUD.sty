@@ -1,0 +1,142 @@
+% ==============================================================================
+% Tema Beamer institucional - Universidad Distrital Francisco José de Caldas
+% Uso:  \documentclass[aspectratio=169,10pt]{beamer}
+%       \usetheme{UD}
+% Compilar con tectonic (XeTeX) indicando dónde está este archivo:
+%       tectonic -Z search-path=<ruta>/plantillas-latex archivo.tex
+% Para otra ubicación del manual: \newcommand{\UDmarca}{/ruta} ANTES de \usetheme{UD}.
+% ==============================================================================
+\ProvidesPackage{beamerthemeUD}[2026/10/07 Tema Beamer institucional UD]
+
+\RequirePackage{fontspec}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{booktabs}
+\RequirePackage{array}
+\usetikzlibrary{calc,positioning,arrows.meta,fit}
+
+\providecommand{\UDmarca}{/Users/juferoga/repos/ud/maestria/mcic/.UniversidadDistrital-manual-marca}
+\newcommand{\UDfuentes}{\UDmarca/fuentes/}
+\newcommand{\UDassets}{\UDmarca/plantillas-latex/assets/}
+
+% --- Tipografía institucional: Cambria (títulos) y Times New Roman (texto) ---
+\newfontfamily\cambriafont{cambria.ttc}[Path=\UDfuentes, BoldFont=cambriab.ttf, ItalicFont=cambriai.ttf, BoldItalicFont=cambriaz.ttf]
+\setmainfont{times.ttf}[Path=\UDfuentes, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]
+\setsansfont{times.ttf}[Path=\UDfuentes, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]
+
+% --- Paleta institucional ---
+\definecolor{UDRed}{HTML}{ED3237}
+\definecolor{UDDarkRed}{HTML}{A61C22}
+\definecolor{UDGold}{HTML}{B49739}
+\definecolor{UDBlue}{HTML}{1291C0}
+\definecolor{UDGreen}{HTML}{00A859}
+\definecolor{UDDarkGreen}{HTML}{047857}
+\definecolor{UDSilver}{HTML}{64748B}
+\definecolor{UDSable}{HTML}{373435}
+\definecolor{UDLightGray}{HTML}{F8FAFC}
+\definecolor{UDBorder}{HTML}{CBD5E1}
+
+% --- Márgenes: 3,15 cm a la izquierda para librar la franja roja del fondo ---
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=3.15cm, text margin right=0.75cm}
+\setbeamercolor{normal text}{fg=UDSable}
+\setbeamercolor{itemize item}{fg=UDRed}
+\setbeamercolor{enumerate item}{fg=UDRed}
+\setbeamertemplate{itemize item}{\small$\blacktriangleright$}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+
+% Ojo: \fontsize siempre va seguido de \selectfont, si no el tamaño no se aplica.
+\setbeamertemplate{frametitle}{%
+  \vspace{0.45cm}
+  \begin{minipage}{\textwidth}
+    {\cambriafont\fontsize{14pt}{16pt}\selectfont\bfseries\color{UDSable}\insertframetitle\par}
+    \ifx\insertframesubtitle\@empty\else
+      \vskip2pt
+      {\cambriafont\fontsize{8.5pt}{10pt}\selectfont\bfseries\color{UDRed}\insertframesubtitle\par}
+    \fi
+  \end{minipage}
+}
+
+% Número de página anclado a la esquina, dentro del área visible.
+% (Un \vspace dentro del footline no sube nada y el número queda cortado contra el borde.)
+\setbeamertemplate{footline}{%
+  \ifnum\thepage>1
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=south east, inner sep=0pt, text=UDSilver, font=\fontsize{7pt}{8pt}\selectfont]
+        at ([xshift=-0.75cm, yshift=0.35cm]current page.south east) {\insertframenumber\,/\,\inserttotalframenumber};
+    \end{tikzpicture}%
+  \fi
+}
+
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight]{\UDassets fondo_contenido.jpg}}
+
+% --- Tarjetas: el ancho descuenta el margen interno (2 x 6pt) y el borde, para no salirse de la columna ---
+\newcommand{\UDCard}[3]{%
+  \begin{tikzpicture}
+    \node[fill=#1, draw=#2, rounded corners=3pt, line width=0.7pt, inner sep=6pt, text width=\linewidth-14pt] {#3};
+  \end{tikzpicture}%
+}
+\newcommand{\cardtitle}[2]{{\cambriafont\bfseries\color{#1}#2}\par\vspace{0.08cm}}
+
+\tikzset{
+  paso/.style={draw=UDBorder, fill=white, rounded corners=2.5pt, line width=0.6pt, align=center,
+               font=\fontsize{7.5pt}{9pt}\selectfont, inner sep=3pt, minimum height=1.0cm, text width=1.75cm},
+  flecha/.style={thick, color=UDRed, -{Latex[length=2mm]}},
+}
+
+% --- Portada: el texto debe caber en el panel blanco de portada_base.jpg (unos 5,3 x 4,2 cm) ---
+% \UDportada{Título}{Subtítulo}{Autores (líneas con \\)}{Programa}{Curso / año}
+\newcommand{\UDportada}[5]{%
+  {\setbeamertemplate{background}{}
+  \begin{frame}[plain]
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=south west,inner sep=0pt] at (current page.south west)
+        {\includegraphics[width=\paperwidth,height=\paperheight]{\UDassets portada_base.jpg}};
+      \node[anchor=north west, align=left, inner sep=0pt] at ([xshift=8.10cm, yshift=-2.60cm]current page.north west) {
+        \begin{minipage}{5.2cm}\raggedright\hyphenpenalty=10000
+          {\cambriafont\fontsize{12pt}{14pt}\selectfont\bfseries\color{UDSable}#1\par}
+          \vspace{0.06cm}
+          {\cambriafont\fontsize{7.5pt}{9pt}\selectfont\bfseries\color{UDRed}#2\par}
+          \vspace{0.05cm}
+          {\color{UDRed}\rule{5.0cm}{1.0pt}\par}
+          \vspace{0.06cm}
+          {\cambriafont\fontsize{7.5pt}{9pt}\selectfont\bfseries\color{UDSable}#3\par}
+          \vspace{0.05cm}
+          {\fontsize{6.4pt}{7.6pt}\selectfont\color{UDSable}#4\par}
+          {\fontsize{6.4pt}{7.6pt}\selectfont\color{UDBlue}#5\par}
+        \end{minipage}
+      };
+    \end{tikzpicture}
+  \end{frame}}%
+}
+
+% --- Cierre ---
+% \UDcierre{Autores (líneas con \\)}{Programa}{Curso}
+\newcommand{\UDcierre}[3]{%
+  {\setbeamertemplate{background}{}
+  \begin{frame}[plain]
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=south west,inner sep=0pt] at (current page.south west)
+        {\includegraphics[width=\paperwidth,height=\paperheight]{\UDassets cierre_base.jpg}};
+      \node[anchor=center, fill=white, fill opacity=0.94, text opacity=1, rounded corners=4pt, inner sep=14pt,
+            line width=0.8pt, draw=UDBorder] at ([xshift=3.2cm, yshift=0.2cm]current page.center) {
+        \begin{minipage}{5.8cm}
+          \centering
+          {\cambriafont\fontsize{16pt}{18pt}\selectfont\bfseries\color{UDRed}Gracias\par}
+          \vspace{0.2cm}
+          {\cambriafont\fontsize{10.5pt}{13pt}\selectfont\bfseries\color{UDSable}Preguntas y discusión\par}
+          \vspace{0.2cm}
+          {\color{UDRed}\rule{4.2cm}{1.2pt}\par}
+          \vspace{0.2cm}
+          {\cambriafont\fontsize{9pt}{11pt}\selectfont\bfseries\color{UDSable}#1\par}
+          \vspace{0.08cm}
+          {\fontsize{8pt}{10pt}\selectfont\color{UDSable}#2\par}
+          \vspace{0.06cm}
+          {\fontsize{7.5pt}{9pt}\selectfont\color{UDSilver}#3\par}
+        \end{minipage}
+      };
+    \end{tikzpicture}
+  \end{frame}}%
+}
+
+% Columnas: usar siempre \begin{columns}[T,onlytextwidth] para que la separación no se salga del margen.
