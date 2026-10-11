@@ -1,0 +1,24 @@
+{#- Utilidades compartidas por las plantillas del portafolio.
+    Importar con contexto: {% import "partials/mcic.html" as mc with context %} -#}
+
+{#- URL relativa de una página a partir de su fuente (p. ej. "semestre-1/index.md"),
+    válida tanto con use_directory_urls como sin él. -#}
+{% macro href(src) -%}
+  {%- for p in nav.pages if p.file.src_uri == src -%}{{ p.url | url }}{%- endfor -%}
+{%- endmacro %}
+
+{% macro arrow() -%}
+  <svg class="mc-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+{%- endmacro %}
+
+{% macro lock() -%}
+  <svg class="mc-lock" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+{%- endmacro %}
+
+{% macro section_head(num, eyebrow, title, lead="") -%}
+  <header class="mc-section__head" data-reveal>
+    <span class="mc-kicker"><b>{{ num }}</b>{{ eyebrow }}</span>
+    <h2 class="mc-section__title">{{ title }}</h2>
+    {%- if lead %}<p class="mc-section__lead">{{ lead }}</p>{% endif %}
+  </header>
+{%- endmacro %}

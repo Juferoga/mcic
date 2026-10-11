@@ -1,8 +1,8 @@
 # Semestre I — 2026-1
 
-<p class="meta"><b>Estado</b> Cerrado · <b>Créditos</b> 16 / 16 · <b>Promedio</b> 4.73</p>
+<div class="mc-meta"><span class="is-grade"><b>Estado</b>Cerrado</span><span><b>Créditos</b>16 / 16</span><span><b>Promedio</b>4.73</span></div>
 
-<div class="pbar"><span style="width:100%"></span></div>
+<div class="pbar" style="--v:100%"><span></span></div>
 <p class="pbar-label">16 / 16 créditos aprobados</p>
 
 | Materia | Docente | Nota |

@@ -1,6 +1,6 @@
 # Inteligencia de Negocios
 
-<p class="meta"><b>Estado</b> En curso · <b>Créditos</b> 4 · <b>Componente</b> Electiva I · <b>Período</b> 2026-3 · <b>Docente</b> Nancy Yaneth Gelvez Garcia · <a href="https://github.com/Juferoga/mcic-business-intelligence">Repositorio</a></p>
+<div class="mc-meta"><span class="is-live"><span class="mc-pulse"></span>En curso</span><span><b>Créditos</b>4</span><span><b>Componente</b>Electiva I</span><span><b>Período</b>2026-3</span><span><b>Docente</b>Nancy Yaneth Gelvez Garcia</span><a href="https://github.com/Juferoga/mcic-business-intelligence">Repositorio ↗</a></div>
 
 Bodegas de datos, ETL y analítica orientada a la toma de decisiones organizacionales.
 

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{#- Tipografía de titulares: Caladea es métricamente compatible con Cambria,
+    la fuente primaria del manual de marca UD, y está disponible como webfont. -#}
+{% block extrahead %}
+  {{ super() }}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400&display=swap">
+  <meta name="theme-color" content="#0a1a27">
+  {#- Activa las animaciones antes del primer pintado para evitar parpadeos.
+      Si mcic.js no llega a cargar, se desactivan y el contenido queda visible. -#}
+  <script>
+    (function (d) {
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) d.classList.add("js-motion");
+      setTimeout(function () { if (!window.__mcic) d.classList.remove("js-motion"); }, 3000);
+    })(document.documentElement);
+  </script>
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  <div class="mc-scroll-progress" aria-hidden="true"></div>
+{% endblock %}
+
+{#- Franja institucional sobre el pie. El escudo se muestra completo, sin
+    efectos ni animación, como exige el manual de imagen institucional. -#}
+{% block footer %}
+  <div class="mc-brandbar">
+    <div class="md-grid mc-brandbar__inner">
+      <a class="mc-brandbar__logo" href="https://www.udistrital.edu.co" rel="noopener" title="Universidad Distrital Francisco José de Caldas">
+        <img src="{{ 'assets/ud/ud-horizontal-invertido.png' | url }}" alt="Universidad Distrital Francisco José de Caldas" width="720" height="226" loading="lazy">
+      </a>
+      <p class="mc-brandbar__text">
+        <span>Maestría en Ciencias de la Información y las Comunicaciones</span>
+        <span>Énfasis en Inteligencia Artificial · Modalidad investigación</span>
+      </p>
+    </div>
+  </div>
+  {{ super() }}
+{% endblock %}

@@ -1,0 +1,174 @@
+{% extends "main.html" %}
+
+{#- Portada del portafolio. Todo el contenido proviene de config.extra.mcic
+    (mkdocs.yml); esta plantilla sólo define la presentación. -#}
+
+{% block tabs %}
+  {{ super() }}
+  {% import "partials/mcic.html" as mc with context %}
+  {% set d = config.extra.mcic %}
+  {% set pct = (d.creditos.aprobados / d.creditos.total * 100) | round(1) %}
+  <section class="mc-hero">
+    <canvas class="mc-hero__canvas" aria-hidden="true"></canvas>
+    <div class="mc-hero__glow" aria-hidden="true"></div>
+    <div class="md-grid mc-hero__inner">
+      <div class="mc-hero__copy">
+        <p class="mc-eyebrow mc-intro" style="--i:0"><span class="mc-pulse" aria-hidden="true"></span>{{ d.semestre_actual }} · en curso</p>
+        <h1 class="mc-hero__title">
+          {%- set words = ["Maestría", "en", "Ciencias", "de", "la"] -%}
+          {%- for w in words %}<span class="mc-word" style="--i:{{ loop.index }}">{{ w }}</span> {% endfor -%}
+          <em>
+          {%- for w in ["Información", "y", "las", "Comunicaciones"] %}<span class="mc-word" style="--i:{{ loop.index + 5 }}">{{ w }}</span> {% endfor -%}
+          </em>
+        </h1>
+        <p class="mc-hero__lead mc-intro" style="--i:10">
+          Portafolio académico de <strong>Juan Felipe Rodríguez Galindo</strong> en la Universidad Distrital Francisco José de Caldas.
+          Énfasis en Inteligencia Artificial, modalidad investigación. Materiales, trabajos y notas — todo versionado, todo medible.
+        </p>
+        <div class="mc-hero__actions mc-intro" style="--i:11">
+          <a class="mc-btn mc-btn--primary" href="#asignaturas" data-magnetic>Explorar asignaturas {{ mc.arrow() }}</a>
+          <a class="mc-btn mc-btn--ghost" href="{{ mc.href('perfil.md') }}" data-magnetic>Ver perfil</a>
+        </div>
+      </div>
+
+      <aside class="mc-panel mc-intro" style="--i:8" aria-label="Avance del plan de estudios" data-tilt>
+        <div class="mc-panel__ring" data-reveal>
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs>
+              <linearGradient id="mc-ring-grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#3fb5e3"/>
+                <stop offset="1" stop-color="#00A859"/>
+              </linearGradient>
+            </defs>
+            <circle class="mc-ring__track" cx="60" cy="60" r="52" pathLength="100"/>
+            <circle class="mc-ring__value" cx="60" cy="60" r="52" pathLength="100" style="--p:{{ pct }}"/>
+          </svg>
+          <div class="mc-panel__ring-label">
+            <b data-count="{{ pct }}" data-decimals="1" data-suffix=" %">{{ pct }} %</b>
+            <span>del plan</span>
+          </div>
+        </div>
+        <dl class="mc-panel__rows">
+          <div><dt>Créditos</dt><dd><b data-count="{{ d.creditos.aprobados }}">{{ d.creditos.aprobados }}</b> / {{ d.creditos.total }}</dd></div>
+          <div><dt>Promedio</dt><dd><b data-count="{{ d.promedio }}" data-decimals="2">{{ d.promedio }}</b> / 5.0</dd></div>
+          <div><dt>Énfasis</dt><dd>Inteligencia Artificial</dd></div>
+        </dl>
+      </aside>
+    </div>
+    <a class="mc-hero__scroll" href="#trayectoria" aria-label="Ir a la trayectoria"><span></span></a>
+  </section>
+{% endblock %}
+
+{% block content %}
+  {% import "partials/mcic.html" as mc with context %}
+  {% set d = config.extra.mcic %}
+  {% set materias_s2 = d.materias | selectattr("semestre", "equalto", "s2") | list %}
+  {% set entregas = materias_s2 | map(attribute="entregas") | select("number") | sum %}
+
+  {#- ---------- Cifras ---------- -#}
+  <div class="mc-stats">
+    <div class="mc-stat" data-reveal style="--i:0"><b data-count="{{ d.creditos.aprobados }}">{{ d.creditos.aprobados }}</b><span>Créditos aprobados de {{ d.creditos.total }}</span></div>
+    <div class="mc-stat" data-reveal style="--i:1"><b data-count="{{ d.promedio }}" data-decimals="2">{{ d.promedio }}</b><span>Promedio acumulado</span></div>
+    <div class="mc-stat" data-reveal style="--i:2"><b data-count="{{ d.materias | length }}">{{ d.materias | length }}</b><span>Asignaturas cursadas</span></div>
+    <div class="mc-stat" data-reveal style="--i:3"><b data-count="{{ entregas }}">{{ entregas }}</b><span>Entregas en el semestre actual</span></div>
+  </div>
+
+  {#- ---------- Trayectoria ---------- -#}
+  <section class="mc-section" id="trayectoria">
+    {{ mc.section_head("01", "Trayectoria", "Tres semestres, un plan de 44 créditos", "Del núcleo común a la tesis: el avance se acredita al cierre de cada período.") }}
+    {% set cerrados = d.semestres | selectattr("estado", "equalto", "cerrado") | list | length %}
+    {% set en_curso = d.semestres | selectattr("estado", "equalto", "en-curso") | list | length %}
+    <ol class="mc-timeline" data-reveal style="--fill:{{ (cerrados + 0.5 * en_curso) / (d.semestres | length - 1) }}">
+      {% for s in d.semestres %}
+        <li class="mc-tl mc-tl--{{ s.estado }}" style="--i:{{ loop.index0 }}">
+          <span class="mc-tl__dot" aria-hidden="true"></span>
+          <span class="mc-tl__period">{{ s.periodo }}</span>
+          <h3 class="mc-tl__name">
+            {%- if s.doc %}<a href="{{ mc.href(s.doc) }}">{{ s.nombre }}</a>{% else %}{{ s.nombre }}{% endif -%}
+          </h3>
+          <p class="mc-tl__summary">{{ s.resumen }}</p>
+          <div class="pbar" style="--v:{{ (s.creditos / s.total * 100) | round(1) }}%"><span></span></div>
+          <span class="pbar-label">{{ s.creditos }} / {{ s.total }} créditos</span>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  {#- ---------- Asignaturas ---------- -#}
+  <section class="mc-section" id="asignaturas">
+    {{ mc.section_head("02", "Asignaturas", "Cada materia, su repositorio", "Notas, entregas y materiales enlazados a los submódulos de GitHub.") }}
+    <div class="mc-filter" role="group" aria-label="Filtrar asignaturas" data-reveal>
+      <button type="button" class="mc-chip" data-filter="all" aria-pressed="true">Todas</button>
+      {% for s in d.semestres if d.materias | selectattr("semestre", "equalto", s.id) | list %}
+        <button type="button" class="mc-chip" data-filter="{{ s.id }}" aria-pressed="false">{{ s.nombre }}</button>
+      {% endfor %}
+    </div>
+    <div class="mc-cards" data-filter-target>
+      {% for m in d.materias %}
+        {% set sem = d.semestres | selectattr("id", "equalto", m.semestre) | first %}
+        <a class="mc-card{% if m.nota is defined %} mc-card--graded{% endif %}" href="{{ mc.href(m.doc) }}" data-group="{{ m.semestre }}" data-reveal style="--i:{{ loop.index0 % 4 }}">
+          <span class="mc-card__top">
+            <span class="mc-tag mc-tag--{{ sem.estado }}">{{ sem.nombre }}</span>
+            <span class="mc-card__comp">{{ m.componente }}</span>
+          </span>
+          <span class="mc-card__title">{{ m.nombre }}</span>
+          <span class="mc-card__teacher">{{ m.docente }}</span>
+          <span class="mc-card__foot">
+            {% if m.nota is defined %}
+              <span class="mc-grade"><b data-count="{{ m.nota }}" data-decimals="1">{{ m.nota }}</b><small>/ 5.0</small></span>
+            {% elif m.privado %}
+              <span class="mc-status">{{ mc.lock() }} Contenido privado</span>
+            {% else %}
+              <span class="mc-status"><span class="mc-pulse" aria-hidden="true"></span>En curso · {{ m.entregas }} entrega{{ "s" if m.entregas != 1 }}</span>
+            {% endif %}
+            {{ mc.arrow() }}
+          </span>
+          {% if m.nota is defined %}<span class="mc-card__meter" style="--v:{{ m.nota / 5 * 100 }}%" aria-hidden="true"></span>{% endif %}
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  {#- ---------- Plan de estudios ---------- -#}
+  <section class="mc-section" id="plan">
+    {{ mc.section_head("03", "Plan de estudios", "Avance por componente") }}
+    <div class="mc-plan">
+      {% for c in d.componentes %}
+        <div class="mc-plan__row" data-reveal style="--i:{{ loop.index0 }}">
+          <div class="mc-plan__name"><b>{{ c.nombre }}</b><span>{{ c.detalle }}</span></div>
+          <div class="pbar pbar--lg" style="--v:{{ (c.aprobados / c.total * 100) | round(1) }}%"><span></span></div>
+          <div class="mc-plan__value"><b data-count="{{ c.aprobados }}">{{ c.aprobados }}</b> / {{ c.total }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  {#- ---------- Temas ---------- -#}
+  <section class="mc-section mc-section--flush" aria-label="Temas trabajados">
+    <div class="mc-marquee">
+      {% for copy in [0, 1] %}
+        <ul class="mc-marquee__track"{% if copy %} aria-hidden="true"{% endif %}>
+          {% for t in d.temas %}<li>{{ t }}</li>{% endfor %}
+        </ul>
+      {% endfor %}
+    </div>
+  </section>
+
+  {#- ---------- Investigación ---------- -#}
+  <section class="mc-section" id="investigacion">
+    {{ mc.section_head("04", "Investigación", "Trabajo de grado") }}
+    <div class="mc-research" data-reveal>
+      <div class="mc-research__icon">{{ mc.lock() }}</div>
+      <div class="mc-research__body">
+        <p>Proyecto de investigación en curso, a partir del anteproyecto aprobado con <strong>5.0</strong> en el Seminario de Investigación. Su contenido técnico se mantiene en repositorios privados.</p>
+        <dl>
+          <div><dt>Directora</dt><dd>Dra. Deicy Alvarado Nieto</dd></div>
+          <div><dt>Codirectora</dt><dd>MsC. Isabel Amaya Barrera</dd></div>
+        </dl>
+      </div>
+      <a class="mc-btn mc-btn--primary" href="{{ mc.href('semestre-2/trabajo-de-grado-1.md') }}" data-magnetic>Trabajo de Grado I {{ mc.arrow() }}</a>
+    </div>
+  </section>
+
+  {{ page.content }}
+{% endblock %}

@@ -4,44 +4,57 @@ site_author: Juan Felipe Rodríguez Galindo
 site_url: https://juferoga.github.io/mcic/
 repo_url: https://github.com/Juferoga/mcic
 repo_name: Juferoga/mcic
+copyright: Juan Felipe Rodríguez Galindo · Universidad Distrital Francisco José de Caldas
 
 theme:
   name: material
+  custom_dir: overrides
   font:
     text: Inter
     code: JetBrains Mono
   language: es
   logo: assets/mcic-logo.png
   favicon: assets/mcic-logo.png
+  icon:
+    repo: fontawesome/brands/github
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: white
-      accent: deep orange
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Modo oscuro
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
-      accent: deep orange
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Modo claro
   features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
     - navigation.tabs
     - navigation.sections
+    - navigation.indexes
     - navigation.top
     - navigation.footer
+    - toc.follow
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
+    - content.tooltips
 
 markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
   - tables
+  - toc:
+      permalink: "#"
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.emoji:
@@ -51,21 +64,132 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/mcic.js
+
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Juferoga
+      name: GitHub
+  # ------------------------------------------------------------------
+  # Fuente única de datos del portafolio. La portada (overrides/home.html)
+  # se genera a partir de este bloque: actualizar aquí notas y avances.
+  # ------------------------------------------------------------------
+  mcic:
+    creditos: { aprobados: 16, total: 44 }
+    promedio: 4.73
+    semestre_actual: Semestre II · 2026-3
+    semestres:
+      - id: s1
+        nombre: Semestre I
+        periodo: 2026-1
+        estado: cerrado
+        creditos: 16
+        total: 16
+        resumen: Cerrado · promedio 4.73
+        doc: semestre-1/index.md
+      - id: s2
+        nombre: Semestre II
+        periodo: 2026-3
+        estado: en-curso
+        creditos: 0
+        total: 16
+        resumen: En curso desde agosto · créditos al cierre
+        doc: semestre-2/index.md
+      - id: s3
+        nombre: Semestre III
+        periodo: 2027-1
+        estado: pendiente
+        creditos: 0
+        total: 12
+        resumen: Trabajo de Grado II y electiva
+    materias:
+      - nombre: Herramientas Matemáticas
+        semestre: s1
+        componente: Fundamental I
+        docente: Hans Igor López Chávez
+        nota: 4.7
+        doc: semestre-1/herramientas-matematicas.md
+      - nombre: Informática
+        semestre: s1
+        componente: Fundamental II
+        docente: Álvaro Enrique Ortiz Dávila
+        nota: 4.6
+        doc: semestre-1/informatica.md
+      - nombre: Seminario de Investigación
+        semestre: s1
+        componente: Investigación
+        docente: Álvaro Enrique Ortiz Dávila
+        nota: 5.0
+        doc: semestre-1/seminario-investigacion.md
+      - nombre: Analítica de Datos
+        semestre: s1
+        componente: Profundización I
+        docente: Jorge Enrique Rodríguez Rodríguez
+        nota: 4.6
+        doc: semestre-1/analitica-de-datos.md
+      - nombre: Inteligencia Computacional
+        semestre: s2
+        componente: Profundización II
+        docente: Cesar Andrey Perdomo Charry
+        entregas: 5
+        doc: semestre-2/inteligencia-computacional.md
+      - nombre: Computación Paralela
+        semestre: s2
+        componente: Profundización III
+        docente: Nelson Enrique Vera Parra
+        entregas: 1
+        doc: semestre-2/computacion-paralela.md
+      - nombre: Inteligencia de Negocios
+        semestre: s2
+        componente: Electiva I
+        docente: Nancy Yaneth Gelvez Garcia
+        entregas: 1
+        doc: semestre-2/inteligencia-de-negocios.md
+      - nombre: Trabajo de Grado I
+        semestre: s2
+        componente: Investigación
+        docente: Dra. Deicy Alvarado Nieto
+        privado: true
+        doc: semestre-2/trabajo-de-grado-1.md
+    componentes:
+      - { nombre: Núcleo común, detalle: "Fundamental I y II", aprobados: 8, total: 8 }
+      - { nombre: Profundización, detalle: "I, II y III", aprobados: 4, total: 12 }
+      - { nombre: Electivas, detalle: "I y II", aprobados: 0, total: 8 }
+      - { nombre: Investigación, detalle: "Seminario, Trabajo de Grado I y II", aprobados: 4, total: 16 }
+    temas:
+      - Álgebra lineal
+      - Estadística
+      - Arquitectura de software
+      - Patrones de diseño
+      - Analítica de datos
+      - Perceptrón
+      - Adaline
+      - MLP
+      - Backpropagation
+      - CNN
+      - KMNIST
+      - Lógica difusa
+      - OpenACC
+      - GPU
+      - ETL
+      - Modelo en estrella
+      - Power Query
+      - SQL
+      - LaTeX
+      - Beamer
 
 nav:
   - Inicio: index.md
   - Semestre I:
-      - Resumen: semestre-1/index.md
+      - semestre-1/index.md
       - Herramientas Matemáticas: semestre-1/herramientas-matematicas.md
       - Informática: semestre-1/informatica.md
       - Seminario de Investigación: semestre-1/seminario-investigacion.md
       - Analítica de Datos: semestre-1/analitica-de-datos.md
   - Semestre II:
-      - Resumen: semestre-2/index.md
+      - semestre-2/index.md
       - Inteligencia Computacional: semestre-2/inteligencia-computacional.md
       - Computación Paralela: semestre-2/computacion-paralela.md
       - Inteligencia de Negocios: semestre-2/inteligencia-de-negocios.md

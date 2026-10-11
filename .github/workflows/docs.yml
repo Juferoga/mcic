@@ -22,7 +22,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install mkdocs-material
+      # MkDocs 2.0 elimina el sistema de temas: los overrides de overrides/ requieren 1.x
+      - run: pip install "mkdocs>=1.6,<2" "mkdocs-material>=9.7,<10"
       - run: mkdocs build
       - uses: actions/upload-pages-artifact@v3
         with:

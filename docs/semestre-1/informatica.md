@@ -1,6 +1,6 @@
 # Informática
 
-<p class="meta"><b>Nota</b> 4.6 · <b>Créditos</b> 4 · <b>Docente</b> Álvaro Enrique Ortiz Dávila · <b>Código</b> 79501002 · <a href="https://github.com/Juferoga/mcic-computing">Repositorio</a></p>
+<div class="mc-meta"><span class="is-grade"><b>Nota</b>4.6</span><span><b>Créditos</b>4</span><span><b>Componente</b>Fundamental II</span><span><b>Docente</b>Álvaro Enrique Ortiz Dávila</span><span><b>Código</b>79501002</span><a href="https://github.com/Juferoga/mcic-computing">Repositorio ↗</a></div>
 
 Diseño arquitectural de software y patrones: estilos arquitectónicos, patrones de diseño y su aplicación en sistemas de información.
 

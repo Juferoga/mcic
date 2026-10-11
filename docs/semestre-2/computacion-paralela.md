@@ -1,6 +1,6 @@
 # Computación Paralela
 
-<p class="meta"><b>Estado</b> En curso · <b>Créditos</b> 4 · <b>Componente</b> Profundización III · <b>Período</b> 2026-3 · <b>Docente</b> Nelson Enrique Vera Parra · <a href="https://github.com/Juferoga/mcic-parallel-computing">Repositorio</a></p>
+<div class="mc-meta"><span class="is-live"><span class="mc-pulse"></span>En curso</span><span><b>Créditos</b>4</span><span><b>Componente</b>Profundización III</span><span><b>Período</b>2026-3</span><span><b>Docente</b>Nelson Enrique Vera Parra</span><a href="https://github.com/Juferoga/mcic-parallel-computing">Repositorio ↗</a></div>
 
 Programación paralela y de alto rendimiento sobre GPU.
 

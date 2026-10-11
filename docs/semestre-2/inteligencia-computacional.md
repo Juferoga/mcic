@@ -1,6 +1,6 @@
 # Inteligencia Computacional
 
-<p class="meta"><b>Estado</b> En curso · <b>Créditos</b> 4 · <b>Componente</b> Profundización II · <b>Período</b> 2026-3 · <b>Docente</b> Cesar Andrey Perdomo Charry · <a href="https://github.com/Juferoga/mcic-computational-intelligence">Repositorio</a></p>
+<div class="mc-meta"><span class="is-live"><span class="mc-pulse"></span>En curso</span><span><b>Créditos</b>4</span><span><b>Componente</b>Profundización II</span><span><b>Período</b>2026-3</span><span><b>Docente</b>Cesar Andrey Perdomo Charry</span><a href="https://github.com/Juferoga/mcic-computational-intelligence">Repositorio ↗</a></div>
 
 Técnicas de inteligencia computacional: redes neuronales, computación evolutiva y sistemas difusos.
 

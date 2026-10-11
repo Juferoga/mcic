@@ -1,6 +1,6 @@
 # Seminario de Investigación
 
-<p class="meta"><b>Nota</b> 5.0 · <b>Créditos</b> 4 · <b>Docente</b> Álvaro Enrique Ortiz Dávila · <b>Código</b> 79501003 · <a href="https://github.com/Juferoga/mcic-tesis">Producto (repo privado)</a></p>
+<div class="mc-meta"><span class="is-grade"><b>Nota</b>5.0</span><span><b>Créditos</b>4</span><span><b>Componente</b>Investigación</span><span><b>Docente</b>Álvaro Enrique Ortiz Dávila</span><span><b>Código</b>79501003</span><span class="is-private"><b>Producto</b>Repositorio privado</span></div>
 
 Formulación del proyecto de investigación: problema, estado del arte, metodología y plan de trabajo.
 

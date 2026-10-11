@@ -1,8 +1,8 @@
 # Semestre II — 2026-3
 
-<p class="meta"><b>Estado</b> En curso · <b>Créditos</b> 0 / 16 acreditados · <b>Inicio</b> agosto de 2026</p>
+<div class="mc-meta"><span class="is-live"><span class="mc-pulse"></span>En curso</span><span><b>Créditos</b>0 / 16 acreditados</span><span><b>Inicio</b>agosto de 2026</span></div>
 
-<div class="pbar"><span style="width:0%"></span></div>
+<div class="pbar" style="--v:0%"><span></span></div>
 <p class="pbar-label">0 / 16 créditos · se acreditan al cierre del semestre</p>
 
 | Materia | Componente | Créditos | Repositorio |

@@ -1,6 +1,6 @@
 # Analítica de Datos
 
-<p class="meta"><b>Nota</b> 4.6 · <b>Créditos</b> 4 · <b>Docente</b> Jorge Enrique Rodríguez Rodríguez · <b>Código</b> 79501007 · <a href="https://github.com/Juferoga/mcic-data-analytics">Repositorio</a></p>
+<div class="mc-meta"><span class="is-grade"><b>Nota</b>4.6</span><span><b>Créditos</b>4</span><span><b>Componente</b>Profundización I</span><span><b>Docente</b>Jorge Enrique Rodríguez Rodríguez</span><span><b>Código</b>79501007</span><a href="https://github.com/Juferoga/mcic-data-analytics">Repositorio ↗</a></div>
 
 Ciclo de vida de la analítica: preparación de datos, modelado, evaluación y comunicación de resultados.
 

@@ -1,6 +1,6 @@
 # Perfil académico
 
-<p class="meta"><b>Programa</b> MCIC · <b>Énfasis</b> Inteligencia Artificial · <b>Modalidad</b> Investigación · <a href="https://github.com/Juferoga">GitHub</a></p>
+<div class="mc-meta"><span><b>Programa</b>MCIC</span><span><b>Énfasis</b>Inteligencia Artificial</span><span><b>Modalidad</b>Investigación</span><a href="https://github.com/Juferoga">GitHub ↗</a></div>
 
 **Juan Felipe Rodríguez Galindo** — Ingeniero de Sistemas y estudiante de la Maestría en Ciencias de la Información y las Comunicaciones de la Universidad Distrital Francisco José de Caldas.
 
@@ -8,11 +8,11 @@
 
 Seguridad de la información e inteligencia artificial.
 
-<div class="swiss-stats" markdown>
-  <div class="stat"><b>4.73</b><span>Promedio acumulado</span></div>
-  <div class="stat"><b>16 / 44</b><span>Créditos aprobados</span></div>
-  <div class="stat"><b>Monitor</b><span>Distinción de posgrado</span></div>
-  <div class="stat"><b>5.0</b><span>Seminario de investigación</span></div>
+<div class="mc-stats mc-stats--inline">
+  <div class="mc-stat" data-reveal style="--i:0"><b data-count="4.73" data-decimals="2">4.73</b><span>Promedio acumulado</span></div>
+  <div class="mc-stat" data-reveal style="--i:1"><b data-count="16">16</b><span>Créditos aprobados de 44</span></div>
+  <div class="mc-stat" data-reveal style="--i:2"><b>Monitor</b><span>Distinción de posgrado</span></div>
+  <div class="mc-stat" data-reveal style="--i:3"><b data-count="5.0" data-decimals="1">5.0</b><span>Seminario de investigación</span></div>
 </div>
 
 ## Dirección del trabajo de grado
