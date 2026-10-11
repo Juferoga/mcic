@@ -42,6 +42,18 @@ No es un logo oficial: es la marca del portafolio (favicon y app icon).
 Exportados con fondo transparente desde los SVG: logos a 2048 px de ancho,
 wordmarks a 1600 px y símbolos a 1024 px.
 
+### PDF vectorial (`pdf/`)
+
+Para LaTeX, que no lee SVG directamente: `\includegraphics{mcic-logo-color.pdf}`.
+Son 100 % vectoriales (sin imágenes incrustadas). Las plantillas del repositorio ya
+los usan:
+
+- `.UniversidadDistrital-manual-marca/plantillas-latex/assets/LogoMCIC.pdf` (portada del informe)
+- `general/templates/Plantilla_Tareas_MCIC/LogoMCIC.pdf` (encabezado de tareas)
+
+Todos los archivos incluyen un margen de 3 unidades alrededor del arte, porque el
+PNG original toca los bordes del lienzo.
+
 ## Colores
 
 | Tinta | Hex |
@@ -68,9 +80,15 @@ Universidad usa la paleta del manual de marca UD
    mano y se recortan con la silueta (`clipPath`).
 
 ```bash
-pip install pillow numpy potracer
+pip install pillow numpy potracer playwright
 python herramientas/vectorizar_logo.py ../../docs/assets/mcic-logo.png svg/
+python herramientas/exportar_png.py svg/ png/                          # PNG transparentes
+python herramientas/svg_a_pdf.py svg/mcic-logo-color.svg pdf/mcic-logo-color.pdf
 ```
+
+Los dos últimos usan Chrome headless (Playwright con `channel="chrome"`). Después de
+regenerar, copia `pdf/mcic-logo-color.pdf` como `LogoMCIC.pdf` en las plantillas
+LaTeX y `svg/mcic-wordmark-*.svg` en `docs/assets/` para el sitio.
 
 > El original es un raster pequeño, así que esta es una reconstrucción fiel pero no
 > el arte final del programa. Si la Maestría publica el vector oficial, ese tiene

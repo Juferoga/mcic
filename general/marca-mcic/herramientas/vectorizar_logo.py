@@ -111,11 +111,14 @@ DETAILS = M_DETAIL + C1_DETAIL + C2_DETAIL + BARS_DETAIL
 # Filetes a los lados de "30 AÑOS" (1 px en el original: se dibujan como geometría)
 RULES = '<g fill="{c}"><rect x="0" y="190.2" width="181.5" height="0.95"/><rect x="292.5" y="190.2" width="180.5" height="0.95"/></g>'
 
+# Margen de seguridad: el PNG original toca los bordes del lienzo
+PAD = 3
+
 TITLE = "MCIC · Maestría en Ciencias de la Información y las Comunicaciones"
 def svg(view_h, sil, navy_d, cyan, navy, name, id_):
     det = DETAILS.replace("{cyan}", cyan).replace("{navy}", navy)
     return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {view_h}" width="{W}" height="{view_h}" role="img" aria-labelledby="{id_}-t">\n'
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{-PAD} {-PAD} {W + 2 * PAD} {view_h + 2 * PAD}" width="{W + 2 * PAD}" height="{view_h + 2 * PAD}" role="img" aria-labelledby="{id_}-t">\n'
         f'  <title id="{id_}-t">{TITLE}</title>\n'
         f'  <defs><path id="{id_}-s" fill-rule="evenodd" d="{sil}"/>'
         f'<clipPath id="{id_}-clip"><use href="#{id_}-s"/></clipPath></defs>\n'
@@ -141,10 +144,10 @@ for v, (cy_, nv) in VARIANTS.items():
         det_mask = DETAILS.replace("{cyan}", "#000").replace("{navy}", "#000")
         for name, vh, sil in (("mcic-logo", H, full_sil), ("mcic-wordmark", 142, mark_sil)):
             id_ = f"{name}-{v}"
-            s = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {vh}" width="{W}" height="{vh}" role="img" aria-labelledby="{id_}-t">\n'
+            s = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{-PAD} {-PAD} {W + 2 * PAD} {vh + 2 * PAD}" width="{W + 2 * PAD}" height="{vh + 2 * PAD}" role="img" aria-labelledby="{id_}-t">\n'
                  f'  <title id="{id_}-t">{TITLE}</title>\n'
-                 f'  <defs><mask id="{id_}-m" maskUnits="userSpaceOnUse" x="0" y="0" width="{W}" height="{vh}">'
-                 f'<rect width="{W}" height="{vh}" fill="#fff"/><g clip-path="url(#{id_}-clip)">{det_mask}</g></mask>'
+                 f'  <defs><mask id="{id_}-m" maskUnits="userSpaceOnUse" x="{-PAD}" y="{-PAD}" width="{W + 2 * PAD}" height="{vh + 2 * PAD}">'
+                 f'<rect x="{-PAD}" y="{-PAD}" width="{W + 2 * PAD}" height="{vh + 2 * PAD}" fill="#fff"/><g clip-path="url(#{id_}-clip)">{det_mask}</g></mask>'
                  f'<path id="{id_}-s" fill-rule="evenodd" d="{sil}"/>'
                  f'<clipPath id="{id_}-clip"><use href="#{id_}-s"/></clipPath></defs>\n'
                  f'  <use href="#{id_}-s" fill="{nv}" mask="url(#{id_}-m)"/>\n'

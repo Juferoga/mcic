@@ -8,7 +8,7 @@ se toman de `../fuentes/`, así que no hay que copiarlas a cada proyecto.
 |---|---|
 | `beamerthemeUD.sty` | Tema de diapositivas: `\usetheme{UD}` |
 | `ud-informe.sty` | Estilo de informe: `\usepackage{ud-informe}` |
-| `assets/` | Fondos de portada, contenido y cierre; escudo y logo MCIC |
+| `assets/` | Fondos de portada, contenido y cierre; escudo y logo MCIC (`LogoMCIC.pdf`, vectorial, generado desde [`general/marca-mcic`](../../general/marca-mcic/README.md)) |
 | `ejemplos/` | Una presentación y un informe mínimos para copiar |
 | `revisar_pdf.py` | Revisa que nada se salga de los márgenes ni del panel de la portada |
 
