@@ -13,7 +13,7 @@ theme:
     text: Inter
     code: JetBrains Mono
   language: es
-  logo: assets/mcic-mark.png
+  logo: assets/mcic-wordmark.svg
   favicon: assets/favicon.svg
   icon:
     repo: fontawesome/brands/github

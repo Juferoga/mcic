@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 12 48 42" width="480" height="420" role="img" aria-labelledby="mcic-simbolo-invertido-t">
+  <title id="mcic-simbolo-invertido-t">MCIC · símbolo de nodos</title>
+  <defs>
+    <linearGradient id="mcic-simbolo-invertido-ln" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1291c0"/>
+      <stop offset="1" stop-color="#3fb5e3"/>
+    </linearGradient>
+  </defs>
+  <path d="M16 46V20l16 16 16-16v26" fill="none" stroke="url(#mcic-simbolo-invertido-ln)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="16" cy="20" r="4.5" fill="#5cc6ee"/>
+  <circle cx="48" cy="20" r="4.5" fill="#5cc6ee"/>
+  <circle cx="32" cy="36" r="5.2" fill="#e2c66b"/>
+  <circle cx="16" cy="46" r="3.6" fill="#1291c0"/>
+  <circle cx="48" cy="46" r="3.6" fill="#1291c0"/>
+</svg>
