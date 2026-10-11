@@ -6,6 +6,8 @@
   {{ super() }}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400&display=swap">
   <meta name="theme-color" content="#0a1a27">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/favicon-32.png' | url }}">
+  <link rel="apple-touch-icon" href="{{ 'assets/apple-touch-icon.png' | url }}">
   {#- Activa las animaciones antes del primer pintado para evitar parpadeos.
       Si mcic.js no llega a cargar, se desactivan y el contenido queda visible. -#}
   <script>
@@ -19,6 +21,34 @@
 {% block header %}
   {{ super() }}
   <div class="mc-scroll-progress" aria-hidden="true"></div>
+{% endblock %}
+
+{#- Banner generativo de la página. La escena sale del front matter (tema,
+    color, color2, escena) o, si no lo hay, de la entrada de extra.mcic cuyo
+    `doc` coincide con esta página. -#}
+{% block content %}
+  {% set d = config.extra.mcic %}
+  {% set ns = namespace(tema=page.meta.tema, c1=page.meta.color, c2=page.meta.color2, escena=page.meta.escena) %}
+  {% if not ns.tema %}
+    {% for m in d.materias + d.semestres if m.doc == page.file.src_uri and m.tema %}
+      {% set ns.tema = m.tema %}
+      {% set ns.c1 = m.color %}
+      {% set ns.c2 = m.color2 %}
+      {% set ns.escena = m.escena %}
+    {% endfor %}
+  {% endif %}
+  {% if ns.tema %}
+    <style>.md-content { --mc-theme: {{ ns.c1 }}; }</style>
+    <figure class="mc-banner" data-scene="{{ ns.tema }}" data-c1="{{ ns.c1 }}" data-c2="{{ ns.c2 }}">
+      <canvas aria-hidden="true"></canvas>
+      <figcaption>
+        <span>Escena generativa</span>
+        <b>{{ ns.escena }}</b>
+      </figcaption>
+      <span class="mc-banner__hint" aria-hidden="true">Mueve el cursor</span>
+    </figure>
+  {% endif %}
+  {{ super() }}
 {% endblock %}
 
 {#- Franja institucional sobre el pie. El escudo se muestra completo, sin

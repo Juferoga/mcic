@@ -1,3 +1,10 @@
+---
+tema: aurora
+color: "#5cc6ee"
+color2: "#e2c66b"
+escena: Aurora de dominio deformado
+---
+
 # Perfil académico
 
 <div class="mc-meta"><span><b>Programa</b>MCIC</span><span><b>Énfasis</b>Inteligencia Artificial</span><span><b>Modalidad</b>Investigación</span><a href="https://github.com/Juferoga">GitHub ↗</a></div>

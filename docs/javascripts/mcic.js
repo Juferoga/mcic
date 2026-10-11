@@ -39,7 +39,7 @@
           io.unobserve(entry.target);
         }
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+      { rootMargin: "0px 0px -4% 0px", threshold: 0 }
     );
     targets.forEach((el) => io.observe(el));
     onCleanup(() => io.disconnect());
@@ -316,6 +316,207 @@
   }
 
   // ------------------------------------------------------------------------
+  // Escenas WebGL a pantalla completa (hero y banners de página)
+  // Presupuesto: resolución interna reducida, calidad adaptativa según el
+  // tiempo de fotograma, 30 fps en táctiles y pausa fuera de pantalla.
+  // ------------------------------------------------------------------------
+  function mountSurface(host, canvas) {
+    const { Renderer } = window.MCICShaders || {};
+    if (!Renderer) return;
+    let renderer;
+    try {
+      renderer = new Renderer(canvas);
+    } catch (_) {
+      host.classList.add("no-gl");
+      return;
+    }
+
+    const scene = canvas.dataset.scene || host.dataset.scene;
+    const c1 = canvas.dataset.c1 || host.dataset.c1;
+    const c2 = canvas.dataset.c2 || host.dataset.c2;
+    const coarse = !finePointer.matches;
+    const minInterval = coarse ? 1000 / 30 : 0;
+    const budget = Math.max(24, minInterval * 1.35);
+    const mouse = { x: 0.5, y: 0.5, tx: 0.5, ty: 0.5 };
+    const offset = 10 + Math.random() * 20;
+    let scale = coarse ? 0.4 : 0.6;
+    let raf = 0, running = false, visible = true, failed = false;
+    let t0 = performance.now(), last = 0, frames = 0, acc = 0;
+
+    const render = (time) => {
+      if (failed) return;
+      try {
+        renderer.draw(scene, { time, mouse: [mouse.x, mouse.y], c1, c2 });
+        host.classList.add("is-live");
+      } catch (err) {
+        failed = true;
+        console.warn(err);
+        host.classList.add("no-gl");
+        stop();
+      }
+    };
+    const resize = () => {
+      const r = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      renderer.setSize(r.width * dpr * scale, r.height * dpr * scale);
+      if (!running) render(offset);
+    };
+    const loop = (now) => {
+      if (!canvas.isConnected) return stop();
+      raf = requestAnimationFrame(loop);
+      const dt = now - last;
+      if (dt < minInterval) return;
+      last = now;
+      mouse.x += (mouse.tx - mouse.x) * 0.05;
+      mouse.y += (mouse.ty - mouse.y) * 0.05;
+      render(offset + (now - t0) / 1000);
+      if (dt < 250) {
+        acc += dt;
+        if (++frames === 45) {
+          if (acc / frames > budget && scale > 0.26) { scale *= 0.8; resize(); }
+          frames = 0; acc = 0;
+        }
+      }
+    };
+    const start = () => {
+      if (running || failed || reduce.matches || !visible || document.hidden) return;
+      running = true;
+      last = performance.now();
+      raf = requestAnimationFrame(loop);
+    };
+    function stop() { running = false; cancelAnimationFrame(raf); }
+
+    const onMove = (e) => {
+      const r = host.getBoundingClientRect();
+      mouse.tx = (e.clientX - r.left) / r.width;
+      mouse.ty = 1 - (e.clientY - r.top) / r.height;
+    };
+    const onLeave = () => { mouse.tx = 0.5; mouse.ty = 0.5; };
+    const onVisibility = () => (document.hidden ? stop() : start());
+
+    const ro = new ResizeObserver(resize);
+    ro.observe(canvas);
+    const io = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      visible ? start() : stop();
+    });
+    io.observe(canvas);
+    host.addEventListener("pointermove", onMove);
+    host.addEventListener("pointerleave", onLeave);
+    document.addEventListener("visibilitychange", onVisibility);
+    resize();
+    start();
+
+    onCleanup(() => {
+      stop(); ro.disconnect(); io.disconnect();
+      document.removeEventListener("visibilitychange", onVisibility);
+      renderer.dispose();
+    });
+  }
+
+  function initSurfaces(root) {
+    const hero = root.querySelector(".mc-hero__shader");
+    if (hero) mountSurface(hero.closest(".mc-hero"), hero);
+    root.querySelectorAll(".mc-banner").forEach((banner) => {
+      const canvas = banner.querySelector("canvas");
+      if (canvas) mountSurface(banner, canvas);
+    });
+  }
+
+  // ------------------------------------------------------------------------
+  // Arte de las tarjetas: un solo contexto WebGL fuera de pantalla pinta cada
+  // tarjeta en su propio canvas 2D. En reposo es un fotograma estático; sólo
+  // la tarjeta bajo el puntero se anima.
+  // ------------------------------------------------------------------------
+  function initCardArt(root) {
+    const arts = [...root.querySelectorAll(".mc-card__art")];
+    const { Renderer } = window.MCICShaders || {};
+    if (!arts.length || !Renderer) return;
+
+    const offscreen = document.createElement("canvas");
+    let renderer;
+    try {
+      renderer = new Renderer(offscreen, { preserve: true });
+    } catch (_) {
+      return;
+    }
+
+    const state = new Map(arts.map((art, i) => [art, { t: 6 + i * 3.7, mouse: [0.5, 0.5], tm: [0.5, 0.5] }]));
+    let active = null, raf = 0, lastNow = 0;
+
+    const paint = (art) => {
+      const canvas = art.querySelector("canvas");
+      const rect = art.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2) * 0.75;
+      const w = Math.round(rect.width * dpr), h = Math.round(rect.height * dpr);
+      if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
+      const s = state.get(art);
+      try {
+        renderer.setSize(w, h);
+        renderer.draw(art.dataset.scene, { time: s.t, mouse: s.mouse, c1: art.dataset.c1, c2: art.dataset.c2 });
+        canvas.getContext("2d").drawImage(offscreen, 0, 0, w, h);
+        art.classList.add("is-painted");
+      } catch (err) {
+        console.warn(err);
+      }
+    };
+
+    const loop = (now) => {
+      if (!active || !active.isConnected) return;
+      raf = requestAnimationFrame(loop);
+      const s = state.get(active);
+      s.t += Math.min(now - lastNow, 50) / 1000;
+      lastNow = now;
+      s.mouse[0] += (s.tm[0] - s.mouse[0]) * 0.08;
+      s.mouse[1] += (s.tm[1] - s.mouse[1]) * 0.08;
+      paint(active);
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        paint(entry.target);
+        io.unobserve(entry.target);
+      }
+    }, { rootMargin: "200px 0px" });
+    arts.forEach((art) => io.observe(art));
+
+    if (!reduce.matches) {
+      arts.forEach((art) => {
+        const card = art.closest(".mc-card") || art;
+        card.addEventListener("pointerenter", () => {
+          active = art;
+          lastNow = performance.now();
+          cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(loop);
+        });
+        card.addEventListener("pointermove", (e) => {
+          const r = art.getBoundingClientRect();
+          state.get(art).tm = [(e.clientX - r.left) / r.width, 1 - (e.clientY - r.top) / r.height];
+        });
+        card.addEventListener("pointerleave", () => {
+          if (active === art) { active = null; cancelAnimationFrame(raf); }
+          state.get(art).tm = [0.5, 0.5];
+        });
+      });
+    }
+
+    let resizeTimer = 0;
+    const ro = new ResizeObserver(() => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => arts.forEach((art) => art.classList.contains("is-painted") && paint(art)), 150);
+    });
+    const grid = arts[0].closest("[data-filter-target]");
+    if (grid) ro.observe(grid);
+
+    onCleanup(() => {
+      cancelAnimationFrame(raf); io.disconnect(); ro.disconnect(); clearTimeout(resizeTimer);
+      renderer.dispose();
+    });
+  }
+
+  // ------------------------------------------------------------------------
   // Barra de progreso de lectura (respaldo sin scroll-driven animations)
   // ------------------------------------------------------------------------
   function initScrollProgress() {
@@ -344,6 +545,8 @@
     initFilter(root);
     initPointer(root);
     initNetwork(root);
+    initSurfaces(root);
+    initCardArt(root);
   }
 
   initScrollProgress();

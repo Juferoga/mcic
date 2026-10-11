@@ -9,6 +9,7 @@
   {% set d = config.extra.mcic %}
   {% set pct = (d.creditos.aprobados / d.creditos.total * 100) | round(1) %}
   <section class="mc-hero">
+    <canvas class="mc-hero__shader" aria-hidden="true" data-scene="aurora" data-c1="#1291c0" data-c2="#b49739"></canvas>
     <canvas class="mc-hero__canvas" aria-hidden="true"></canvas>
     <div class="mc-hero__glow" aria-hidden="true"></div>
     <div class="md-grid mc-hero__inner">
@@ -107,6 +108,7 @@
       {% for m in d.materias %}
         {% set sem = d.semestres | selectattr("id", "equalto", m.semestre) | first %}
         <a class="mc-card{% if m.nota is defined %} mc-card--graded{% endif %}" href="{{ mc.href(m.doc) }}" data-group="{{ m.semestre }}" data-reveal style="--i:{{ loop.index0 % 4 }}">
+          <span class="mc-card__art" data-scene="{{ m.tema }}" data-c1="{{ m.color }}" data-c2="{{ m.color2 }}" style="--c1:{{ m.color }}" title="{{ m.escena }}"><canvas aria-hidden="true"></canvas></span>
           <span class="mc-card__top">
             <span class="mc-tag mc-tag--{{ sem.estado }}">{{ sem.nombre }}</span>
             <span class="mc-card__comp">{{ m.componente }}</span>
