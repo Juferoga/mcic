@@ -536,6 +536,91 @@
   }
 
   // ------------------------------------------------------------------------
+  // Favicon vivo: la M del logo teñida con el tema de cada página.
+  // docs/assets/favicon.svg trae dos marcadores de color (ver
+  // general/marca-mcic/herramientas/favicon_m.py) que se reemplazan aquí.
+  // ------------------------------------------------------------------------
+  const favicon = (() => {
+    const ACCENT = "#0BA9E6", PLATE = "#095170", NIGHT = [7, 18, 27];
+    // Safari no muestra favicons SVG en las pestañas: se queda con el PNG
+    const isSafari = /^((?!chrome|chromium|android|crios|fxios|edg).)*safari/i.test(navigator.userAgent);
+    const hexToRgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+    const rgbToHex = (c) => "#" + c.map((v) => Math.round(v).toString(16).padStart(2, "0")).join("").toUpperCase();
+    let template = null, link = null, current = hexToRgb(ACCENT), anim = 0;
+
+    const render = (c) => {
+      const plate = c.map((v, i) => 0.42 * v + 0.58 * NIGHT[i]);
+      link.href = "data:image/svg+xml," + encodeURIComponent(
+        template.replaceAll(ACCENT, rgbToHex(c)).replaceAll(PLATE, rgbToHex(plate)));
+    };
+
+    const ready = async () => {
+      if (template === null) {
+        template = "";
+        const svgLink = document.querySelector('link[rel~="icon"][href$=".svg"]');
+        if (!svgLink || isSafari || !window.fetch) return false;
+        try {
+          const text = await (await fetch(svgLink.href)).text();
+          if (text.includes(ACCENT) && text.includes(PLATE)) template = text;
+        } catch (_) { /* sin plantilla: se queda el favicon estático */ }
+      }
+      if (!template) return false;
+      // La navegación instantánea de Material reconstruye los <link> del <head>:
+      // se reclama un único <link rel="icon"> en cada página (si no, el navegador
+      // puede preferir el PNG).
+      if (!link || !link.isConnected) {
+        const icons = [...document.querySelectorAll('link[rel~="icon"]')];
+        link = icons.find((l) => l.type === "image/svg+xml" || /\.svg($|\?)/.test(l.href) || l.href.startsWith("data:image/svg")) || icons[0];
+        if (!link) return false;
+        icons.forEach((l) => l !== link && l.remove());
+        link.type = "image/svg+xml";
+      }
+      return true;
+    };
+
+    const set = async (hex) => {
+      if (!/^#[0-9a-f]{6}$/i.test(hex || "") || !(await ready())) return;
+      const target = hexToRgb(hex);
+      cancelAnimationFrame(anim);
+      // Sin animación si el usuario la reduce o la pestaña está oculta (rAF no corre)
+      if (reduce.matches || document.hidden) { current = target; render(current); return; }
+      const from = current.slice(), t0 = performance.now(), duration = 450;
+      let lastFrame = 0;
+      const step = (now) => {
+        const k = Math.min(1, (now - t0) / duration);
+        if (now - lastFrame > 40 || k === 1) { // ~25 fps bastan para un favicon
+          const e = 1 - Math.pow(1 - k, 3);
+          current = from.map((v, i) => v + (target[i] - v) * e);
+          render(current);
+          lastFrame = now;
+        }
+        if (k < 1) anim = requestAnimationFrame(step);
+      };
+      anim = requestAnimationFrame(step);
+    };
+
+    /** Color del tema de la página actual (--mc-theme) o el acento por defecto. */
+    const fromPage = () => {
+      const el = document.querySelector(".md-content");
+      const theme = el ? getComputedStyle(el).getPropertyValue("--mc-theme").trim() : "";
+      return set(theme || ACCENT);
+    };
+
+    return { set, fromPage };
+  })();
+
+  function initFavicon(root) {
+    favicon.fromPage();
+    // En la portada (sin tema propio) rota de vez en cuando por los colores de las materias
+    if (!root.querySelector(".mc-hero")) return;
+    const colors = [...new Set([...root.querySelectorAll(".mc-card__art")].map((a) => a.dataset.c1))];
+    if (colors.length < 2 || reduce.matches) return;
+    let i = 0;
+    const timer = setInterval(() => favicon.set(colors[i++ % colors.length]), 6000);
+    onCleanup(() => clearInterval(timer));
+  }
+
+  // ------------------------------------------------------------------------
   function init() {
     cleanups.forEach((fn) => fn());
     cleanups = [];
@@ -547,6 +632,7 @@
     initNetwork(root);
     initSurfaces(root);
     initCardArt(root);
+    initFavicon(root);
   }
 
   initScrollProgress();

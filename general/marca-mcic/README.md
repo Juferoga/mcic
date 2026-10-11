@@ -25,10 +25,27 @@ Solo las letras **MCIC**, sin el texto inferior. Pensado para tamaños pequeños
 (navbar, encabezados, favicons anchos), donde la línea de texto no se lee. Tiene
 las mismas cuatro variantes.
 
+### Favicon (`svg/mcic-favicon.svg`)
+
+<img src="png/mcic-favicon.png" width="72" align="right" alt="Favicon MCIC">
+
+La **M del logo** sobre una placa redondeada: el cuerpo en blanco y la franja en el
+color de acento. Lo genera `herramientas/favicon_m.py` a partir del wordmark, y
+`herramientas/favicon_png.py` exporta los PNG de respaldo (32 px y 180 px para iOS).
+
+En el sitio el favicon está vivo: `docs/javascripts/mcic.js` reemplaza dos colores
+marcador y lo tiñe con el tema de cada página, con una transición al navegar. En la
+portada rota cada 6 s por los colores de las materias.
+
+| Marcador | Qué es |
+|----------|--------|
+| `#0BA9E6` | Acento: la franja de la M |
+| `#095170` | Inicio del degradado de la placa: 42 % acento + 58 % `#07121B` |
+
 ### Símbolo de nodos (`svg/mcic-simbolo-*.svg`)
 
 La "M" formada por nodos conectados, inspirada en las pistas de circuito del logo.
-No es un logo oficial: es la marca del portafolio (favicon y app icon).
+No es un logo oficial: fue el primer favicon del portafolio y queda disponible como recurso gráfico.
 
 | Archivo | Uso |
 |---------|-----|
