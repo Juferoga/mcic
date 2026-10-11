@@ -10,5 +10,3 @@ Desarrollo del proyecto de tesis a partir del anteproyecto aprobado.
 - Avance del 50 % del proyecto, certificado por la directora
 - Viabilidad del grupo de investigación junto al anteproyecto (máximo semana 10)
 - Nota asignada 100 % por la directora
-
-El detalle técnico está en la página de la [tesis](../tesis.md).

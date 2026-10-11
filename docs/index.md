@@ -10,7 +10,7 @@ hide:
 
 # Maestría en Ciencias de la Información y las Comunicaciones
 
-<p class="lead">Portafolio académico de <strong>Juan Felipe Rodríguez Galindo</strong>. Énfasis en Inteligencia Artificial, modalidad investigación. Materiales, trabajos, notas y tesis — todo versionado, todo público, todo medible.</p>
+<p class="lead">Portafolio académico de <strong>Juan Felipe Rodríguez Galindo</strong>. Énfasis en Inteligencia Artificial, modalidad investigación. Materiales, trabajos y notas — todo versionado, todo medible.</p>
 </div>
 <div class="visual">
 <img src="assets/mcic-logo.png" alt="MCIC"/>
@@ -71,13 +71,11 @@ hide:
 
     [:octicons-arrow-right-24: Plan 2026-3](semestre-2/index.md)
 
--   **Tesis**
+-   **Trabajo de grado**
 
     ---
 
-    Esteganografía *pure coverless* sobre modelos de difusión: caos hiperdimensional, recuperación exacta y firmas digitales.
-
-    [:octicons-arrow-right-24: La investigación](tesis.md)
+    Proyecto de investigación en curso, bajo la dirección de la Dra. Deicy Alvarado Nieto y la MsC. Isabel Amaya Barrera. Su contenido es privado.
 
 -   **Perfil**
 

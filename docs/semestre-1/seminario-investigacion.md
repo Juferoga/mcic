@@ -6,8 +6,4 @@ Formulación del proyecto de investigación: problema, estado del arte, metodolo
 
 ## Producto
 
-El seminario culminó con el anteproyecto de tesis, aprobado con nota 5.0:
-
-> *Ocultamiento seguro de información en imágenes generadas por inteligencia artificial: integración de modelos de difusión, teoría del caos y firmas digitales*
-
-El detalle técnico está en la página de la [tesis](../tesis.md).
+El seminario culminó con el anteproyecto del trabajo de grado, aprobado con nota 5.0. Su contenido es privado.

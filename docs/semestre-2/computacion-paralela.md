@@ -2,7 +2,7 @@
 
 <p class="meta"><b>Estado</b> En curso · <b>Créditos</b> 4 · <b>Componente</b> Profundización III · <b>Período</b> 2026-3 · <b>Docente</b> Nelson Enrique Vera Parra · <a href="https://github.com/Juferoga/mcic-parallel-computing">Repositorio</a></p>
 
-Programación paralela y de alto rendimiento. Clave para la experimentación con modelos de difusión en GPU (SD 1.5 / SDXL) de la tesis.
+Programación paralela y de alto rendimiento sobre GPU.
 
 ## Avance
 

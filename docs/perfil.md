@@ -6,7 +6,7 @@
 
 ## Línea de trabajo
 
-Seguridad de la información e inteligencia artificial generativa: esteganografía sin cover sobre modelos de difusión, sistemas caóticos para generación de claves y verificación criptográfica de integridad.
+Seguridad de la información e inteligencia artificial.
 
 <div class="swiss-stats" markdown>
   <div class="stat"><b>4.73</b><span>Promedio acumulado</span></div>
@@ -15,7 +15,7 @@ Seguridad de la información e inteligencia artificial generativa: esteganograf�
   <div class="stat"><b>5.0</b><span>Seminario de investigación</span></div>
 </div>
 
-## Directoras de tesis
+## Dirección del trabajo de grado
 
 | Rol | Nombre |
 |-----|--------|

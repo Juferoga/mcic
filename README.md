@@ -21,7 +21,7 @@ Compendio de materiales, trabajos y resultados de la **Maestría en Ciencias de 
 - `general/` — herramientas transversales: [`session-recorder`](general/session-recorder/) (submódulo) y `templates/`.
 - `.UniversidadDistrital-manual-marca/` — manual de marca de la UD y [plantillas LaTeX](.UniversidadDistrital-manual-marca/plantillas-latex/README.md) (informe y presentación) usadas en las entregas.
 - `semestre-3/` — materiales del tercer semestre (por crear).
-- `tesis/` — carpeta donde irá el proyecto y documentación de la tesis.
+- `tesis/` — trabajo de grado (repositorio privado).
 
 ## 📊 Progreso general
 
@@ -68,14 +68,9 @@ Detalle completo en [semestre-1/README.md](semestre-1/README.md).
 
 Detalle y cronograma de matrícula en [semestre-2/README.md](semestre-2/README.md).
 
-## 🔬 Tesis
+## 🔬 Trabajo de grado
 
-> **Ocultamiento seguro de información en imágenes generadas por inteligencia artificial: integración de modelos de difusión, teoría del caos y firmas digitales**
-
-Sistema de esteganografía *pure coverless* sobre modelos de difusión con recuperación exacta del payload (IFE sobre inversión DDIM) y autenticación RSA-2048.
-
-- **Directora:** Dra. Deicy Alvarado Nieto · **Codirectora:** MsC. Isabel Amaya Barrera
-- **Repositorio:** [`mcic-tesis`](https://github.com/Juferoga/mcic-tesis) 🔒 *(privado; se enlazará como submódulo `tesis/`)*
+Proyecto de investigación en curso, bajo la dirección de la Dra. Deicy Alvarado Nieto y la codirección de la MsC. Isabel Amaya Barrera. Su contenido se mantiene en repositorios privados 🔒.
 
 ---
 

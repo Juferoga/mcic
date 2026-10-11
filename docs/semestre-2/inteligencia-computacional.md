@@ -2,7 +2,7 @@
 
 <p class="meta"><b>Estado</b> En curso · <b>Créditos</b> 4 · <b>Componente</b> Profundización II · <b>Período</b> 2026-3 · <b>Docente</b> Cesar Andrey Perdomo Charry · <a href="https://github.com/Juferoga/mcic-computational-intelligence">Repositorio</a></p>
 
-Técnicas de inteligencia computacional: redes neuronales, computación evolutiva y sistemas difusos. Directamente conectada con los modelos generativos de la tesis.
+Técnicas de inteligencia computacional: redes neuronales, computación evolutiva y sistemas difusos.
 
 ## Avance
 
