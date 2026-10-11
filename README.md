@@ -18,6 +18,8 @@ Compendio de materiales, trabajos y resultados de la **Maestría en Ciencias de 
 ## Estructura
 - `semestre-1/` — materiales y submódulos del primer semestre. Ver [semestre-1/README.md](semestre-1/README.md).
 - `semestre-2/` — materiales y submódulos del segundo semestre. Ver [semestre-2/README.md](semestre-2/README.md).
+- `general/` — herramientas transversales: [`session-recorder`](general/session-recorder/) (submódulo) y `templates/`.
+- `.UniversidadDistrital-manual-marca/` — manual de marca de la UD y [plantillas LaTeX](.UniversidadDistrital-manual-marca/plantillas-latex/README.md) (informe y presentación) usadas en las entregas.
 - `semestre-3/` — materiales del tercer semestre (por crear).
 - `tesis/` — carpeta donde irá el proyecto y documentación de la tesis.
 
@@ -30,7 +32,7 @@ Compendio de materiales, trabajos y resultados de la **Maestría en Ciencias de 
 | Semestre | Período | Créditos | Progreso | Estado |
 |----------|---------|---------:|----------|--------|
 | [**Semestre I**](semestre-1/) | 2026-1 | 16/16 | `██████████` 100 % | ✅ Cerrado — promedio **4.73** |
-| [**Semestre II**](semestre-2/) | 2026-3 | 0/16 | `░░░░░░░░░░` 0 % | 📝 Preinscrito |
+| [**Semestre II**](semestre-2/) | 2026-3 | 0/16 | `░░░░░░░░░░` 0 % | 🚧 En curso — los créditos se acreditan al cierre |
 | **Semestre III** | 2027-1 | 0/12 | `░░░░░░░░░░` 0 % | ⏳ Pendiente |
 
 ### Plan de estudios (44 créditos)
@@ -55,14 +57,14 @@ Compendio de materiales, trabajos y resultados de la **Maestría en Ciencias de 
 
 Detalle completo en [semestre-1/README.md](semestre-1/README.md).
 
-## 📝 Semestre II — 2026-3 (preinscrito)
+## 🚧 Semestre II — 2026-3 (en curso)
 
-| Materia | Componente | Repositorio |
-|---------|------------|-------------|
-| Inteligencia Computacional | Profundización II | *por crear* |
-| Computación Paralela | Profundización III | *por crear* |
-| Inteligencia de Negocios | Electiva I | *por crear* |
-| Trabajo de Grado I | Investigación | [`mcic-tesis`](https://github.com/Juferoga/mcic-tesis) 🔒 |
+| Materia | Componente | Avance | Repositorio |
+|---------|------------|--------|-------------|
+| Inteligencia Computacional | Profundización II | Talleres 1–4 (Perceptrón/Adaline, MLP, CNN/KMNIST, lógica difusa) | [`mcic-computational-intelligence`](semestre-2/mcic-computational-intelligence/) |
+| Computación Paralela | Profundización III | Reto 1: tubería CNN en OpenACC | [`mcic-parallel-computing`](semestre-2/mcic-parallel-computing/) |
+| Inteligencia de Negocios | Electiva I | Taller 1: guía NovaRetail 360 | [`mcic-business-intelligence`](semestre-2/mcic-business-intelligence/) |
+| Trabajo de Grado I | Investigación | Gestión administrativa y sesiones de seguimiento | [`mcic-trabajo-grado-1`](semestre-2/mcic-trabajo-grado-1/) · técnico en [`mcic-tesis`](https://github.com/Juferoga/mcic-tesis) 🔒 |
 
 Detalle y cronograma de matrícula en [semestre-2/README.md](semestre-2/README.md).
 
@@ -85,7 +87,14 @@ mcic/
 │   ├── mcic-math-tools-data/    ⤷ submódulo · Herramientas Matemáticas
 │   ├── mcic-computing/          ⤷ submódulo · Informática
 │   └── mcic-data-analytics/     ⤷ submódulo · Analítica de Datos
-├── semestre-2/                  📝 2026-3 · preinscrito
+├── semestre-2/                  🚧 2026-3 · en curso
+│   ├── mcic-computational-intelligence/  ⤷ submódulo · Inteligencia Computacional
+│   ├── mcic-parallel-computing/          ⤷ submódulo · Computación Paralela
+│   ├── mcic-business-intelligence/       ⤷ submódulo · Inteligencia de Negocios
+│   └── mcic-trabajo-grado-1/             ⤷ submódulo · Trabajo de Grado I
+├── general/
+│   └── session-recorder/        ⤷ submódulo · herramienta de grabación de sesiones
+├── .UniversidadDistrital-manual-marca/   manual de marca + plantillas LaTeX
 └── tesis/                       🔜 submódulo mcic-tesis (privado)
 ```
 

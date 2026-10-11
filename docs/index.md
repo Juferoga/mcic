@@ -39,8 +39,8 @@ hide:
 
 <div class="sem-row" markdown>
   <div class="name"><a href="semestre-2/index.html">Semestre II</a> · 2026-3</div>
-  <div><div class="pbar"><span style="width:0%"></span></div><span class="pbar-label">0 / 16 créditos · inicia 3 ago 2026</span></div>
-  <div class="state">Preinscrito</div>
+  <div><div class="pbar"><span style="width:0%"></span></div><span class="pbar-label">0 / 16 créditos · en cursado desde ago 2026</span></div>
+  <div class="state">En curso</div>
 </div>
 
 <div class="sem-row" markdown>
