@@ -6,10 +6,14 @@ Técnicas de inteligencia computacional: redes neuronales, computación evolutiv
 
 ## Avance
 
-| Entrega | Tema |
-|---------|------|
-| Taller 1 | Perceptrón y Adaline |
-| Taller 2 | Perceptrón multicapa (MLP) y backpropagation |
-| Taller 3 | Red convolucional (CNN) sobre KMNIST, con informe, presentación y animación |
-| Taller 4 | Lógica difusa: taller propuesto (Wine) y adicional (clasificación de movimiento de un robot) |
-| Trabajo 1 | Limpieza de datos en casa |
+
+<p class="pbar-label">Corte: 11 de octubre de 2026 · ✅ entregado · 🔶 en curso o por entregar</p>
+
+| Entrega | Tema | Estado |
+|---------|------|:------:|
+| Taller 1 | Perceptrón y Adaline | ✅ |
+| Taller 2 | Perceptrón multicapa (MLP) y backpropagation | ✅ |
+| Taller 3 | Red convolucional (CNN) sobre KMNIST, con informe, presentación y animación | ✅ |
+| Taller 4 · punto 3 | Lógica difusa, taller propuesto: revisión del script del profesor y repetición del flujo con *Wine* | ✅ |
+| Taller 4 · punto 4 | Lógica difusa, taller adicional: dos modelos difusos (4 y 2 sensores) para clasificar el movimiento de un robot | 🔶 |
+| Trabajo 1 | Limpieza de datos en casa | ✅ |

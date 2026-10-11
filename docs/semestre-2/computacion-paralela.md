@@ -6,6 +6,9 @@ Programación paralela y de alto rendimiento sobre GPU.
 
 ## Avance
 
-| Entrega | Tema |
-|---------|------|
-| Reto 1 | Tubería CNN (convolución 2D + ReLU + MaxPooling) acelerada en GPU con OpenACC, medida contra la versión secuencial en CPU. Incluye documentación técnica y presentación Beamer. |
+
+<p class="pbar-label">Corte: 11 de octubre de 2026 · ✅ entregado · 🔶 en curso o por entregar</p>
+
+| Entrega | Tema | Estado |
+|---------|------|:------:|
+| Reto 1 | Tubería CNN (convolución 2D + ReLU + MaxPooling) acelerada en GPU con OpenACC, medida contra la versión secuencial en CPU. Incluye documentación técnica y presentación Beamer. | ✅ |

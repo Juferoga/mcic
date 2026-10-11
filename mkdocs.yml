@@ -100,7 +100,7 @@ extra:
         estado: en-curso
         creditos: 0
         total: 16
-        resumen: En curso desde agosto · créditos al cierre
+        resumen: En curso · corte 11 oct 2026 · créditos al cierre
         doc: semestre-2/index.md
         tema: aurora
         color: "#1291c0"
@@ -159,6 +159,7 @@ extra:
         componente: Profundización II
         docente: Cesar Andrey Perdomo Charry
         entregas: 5
+        siguiente: Taller 4 · punto 4 (robot)
         doc: semestre-2/inteligencia-computacional.md
         tema: neural
         color: "#6fdcb0"
@@ -179,6 +180,7 @@ extra:
         componente: Electiva I
         docente: Nancy Yaneth Gelvez Garcia
         entregas: 1
+        siguiente: Proyecto final integrador
         doc: semestre-2/inteligencia-de-negocios.md
         tema: contornos
         color: "#e2c66b"
@@ -189,6 +191,7 @@ extra:
         componente: Investigación
         docente: Dra. Deicy Alvarado Nieto
         privado: true
+        siguiente: Actas de seguimiento S-01 a S-16
         doc: semestre-2/trabajo-de-grado-1.md
         tema: hex
         color: "#5cc6ee"

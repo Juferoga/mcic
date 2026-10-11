@@ -4,6 +4,15 @@
 
 Desarrollo del proyecto de tesis a partir del anteproyecto aprobado.
 
+## Avance
+
+<p class="pbar-label">Corte: 11 de octubre de 2026 · ✅ entregado · 🔶 en curso o por entregar</p>
+
+| Entrega | Detalle | Estado |
+|---------|---------|:------:|
+| Reunión de inicio | Establecimiento de actividades con la directora (6 de agosto de 2026) | ✅ |
+| Actas de seguimiento | Borradores de las actas S-01 a S-16 en el formato oficial (.docx), a partir del historial del repositorio técnico | 🔶 |
+
 ## Compromisos de la asignatura
 
 - Actas de tutoría: una de inicio, mínimo cuatro de seguimiento y una final

@@ -595,6 +595,11 @@ body:has(.mc-hero) .md-content__inner::before { display: none; }
   color: var(--mc-heading); text-wrap: balance;
 }
 .mc-card__teacher { font-size: .7rem; color: var(--mc-muted); }
+.mc-card__next {
+  display: flex; flex-direction: column; gap: .05rem; margin-top: .55rem; padding-left: .55rem;
+  border-left: 2px solid var(--c1, var(--ud-azur)); font-size: .68rem; line-height: 1.35; color: var(--mc-heading);
+}
+.mc-card__next b { font-size: .56rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--mc-muted); }
 .mc-card__foot {
   display: flex; align-items: center; justify-content: space-between; gap: .5rem;
   margin-top: auto; padding-top: 1rem; color: var(--mc-muted);
