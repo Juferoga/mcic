@@ -64,7 +64,7 @@ Detalle completo en [semestre-1/README.md](semestre-1/README.md).
 | Inteligencia Computacional | Profundización II | Talleres 1–4 (Perceptrón/Adaline, MLP, CNN/KMNIST, lógica difusa) | [`mcic-computational-intelligence`](semestre-2/mcic-computational-intelligence/) |
 | Computación Paralela | Profundización III | Reto 1: tubería CNN en OpenACC | [`mcic-parallel-computing`](semestre-2/mcic-parallel-computing/) |
 | Inteligencia de Negocios | Electiva I | Taller 1: guía NovaRetail 360 | [`mcic-business-intelligence`](semestre-2/mcic-business-intelligence/) |
-| Trabajo de Grado I | Investigación | Gestión administrativa y sesiones de seguimiento | [`mcic-trabajo-grado-1`](semestre-2/mcic-trabajo-grado-1/) · técnico en [`mcic-tesis`](https://github.com/Juferoga/mcic-tesis) 🔒 |
+| Trabajo de Grado I | Investigación | Gestión administrativa y sesiones de seguimiento | [`mcic-trabajo-grado-1`](semestre-2/mcic-trabajo-grado-1/) 🔒 · técnico en [`mcic-tesis`](https://github.com/Juferoga/mcic-tesis) 🔒 |
 
 Detalle y cronograma de matrícula en [semestre-2/README.md](semestre-2/README.md).
 

@@ -1,6 +1,6 @@
 # Trabajo de Grado I
 
-<p class="meta"><b>Estado</b> En curso · <b>Créditos</b> 4 · <b>Componente</b> Investigación · <b>Directora</b> Dra. Deicy Alvarado Nieto · <a href="https://github.com/Juferoga/mcic-trabajo-grado-1">Gestión administrativa</a> · <a href="https://github.com/Juferoga/mcic-tesis">Repositorio técnico (privado)</a></p>
+<p class="meta"><b>Estado</b> En curso · <b>Créditos</b> 4 · <b>Componente</b> Investigación · <b>Directora</b> Dra. Deicy Alvarado Nieto · <a href="https://github.com/Juferoga/mcic-trabajo-grado-1">Gestión administrativa (privado)</a> · <a href="https://github.com/Juferoga/mcic-tesis">Repositorio técnico (privado)</a></p>
 
 Desarrollo del proyecto de tesis a partir del anteproyecto aprobado.
 

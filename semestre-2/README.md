@@ -14,7 +14,7 @@
 | 79502004 | INTELIGENCIA COMPUTACIONAL | CESAR ANDREY PERDOMO CHARRY | 4 | 595-1 | [`mcic-computational-intelligence`](mcic-computational-intelligence/) |
 | 79502008 | INTELIGENCIA DE NEGOCIOS | NANCY YANETH GELVEZ GARCIA | 4 | 695-1 | [`mcic-business-intelligence`](mcic-business-intelligence/) |
 | 79503004 | COMPUTACION PARALELA | NELSON ENRIQUE VERA PARRA | 4 | 695-1 | [`mcic-parallel-computing`](mcic-parallel-computing/) |
-| — | TRABAJO DE GRADO I | — | 4 | — | [`mcic-trabajo-grado-1`](mcic-trabajo-grado-1/) · [`mcic-tesis`](https://github.com/Juferoga/mcic-tesis) 🔒 |
+| — | TRABAJO DE GRADO I | — | 4 | — | [`mcic-trabajo-grado-1`](mcic-trabajo-grado-1/) 🔒 · [`mcic-tesis`](https://github.com/Juferoga/mcic-tesis) 🔒 |
 
 ## Avance por materia
 

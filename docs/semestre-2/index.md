@@ -10,4 +10,4 @@
 | [Inteligencia Computacional](inteligencia-computacional.md) | Profundización II | 4 | [`mcic-computational-intelligence`](https://github.com/Juferoga/mcic-computational-intelligence) |
 | [Computación Paralela](computacion-paralela.md) | Profundización III | 4 | [`mcic-parallel-computing`](https://github.com/Juferoga/mcic-parallel-computing) |
 | [Inteligencia de Negocios](inteligencia-de-negocios.md) | Electiva I | 4 | [`mcic-business-intelligence`](https://github.com/Juferoga/mcic-business-intelligence) |
-| [Trabajo de Grado I](trabajo-de-grado-1.md) | Investigación | 4 | [`mcic-trabajo-grado-1`](https://github.com/Juferoga/mcic-trabajo-grado-1) |
+| [Trabajo de Grado I](trabajo-de-grado-1.md) | Investigación | 4 | [`mcic-trabajo-grado-1`](https://github.com/Juferoga/mcic-trabajo-grado-1) 🔒 |
