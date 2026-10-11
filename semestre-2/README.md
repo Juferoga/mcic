@@ -1,7 +1,7 @@
 
 # 🚧 Semestre II — 2026-3
 
-![Estado](https://img.shields.io/badge/Estado-En_curso-orange?style=flat-square) ![Créditos](https://img.shields.io/badge/Créditos-0%2F16_(en_cursado)-lightgrey?style=flat-square)
+![Estado](https://img.shields.io/badge/Estado-En_curso-orange?style=flat-square) ![Créditos](https://img.shields.io/badge/Créditos-0%2F16_(en_cursado)-lightgrey?style=flat-square) ![Corte](https://img.shields.io/badge/Corte-11_oct_2026-blue?style=flat-square)
 
 ```text
 ░░░░░░░░░░  0 / 16 créditos acreditados · semestre en curso (inició en agosto de 2026)
@@ -18,12 +18,14 @@
 
 ## Avance por materia
 
-| Materia | Entregado hasta ahora |
+> Corte: **11 de octubre de 2026** (semana 9 de clases). ✅ entregado · 🔶 en curso o por entregar.
+
+| Materia | Avance |
 |---|---|
-| Inteligencia Computacional | Taller 1 (Perceptrón y Adaline) · Taller 2 (MLP y backpropagation) · Taller 3 (CNN sobre KMNIST, informe, presentación y animación) · Taller 4 (lógica difusa: Wine y robot) · Trabajo 1 (limpieza en casa) |
-| Computación Paralela | Reto 1: tubería CNN (convolución + ReLU + MaxPooling) en OpenACC, con documentación técnica y presentación |
-| Inteligencia de Negocios | Taller 1: guía NovaRetail 360 (limpieza con pipeline, Power Query, SQL, informe y presentación) |
-| Trabajo de Grado I | Primera reunión de establecimiento de actividades (2026-08-06) y gestión administrativa del programa |
+| Inteligencia Computacional | ✅ Taller 1 (Perceptrón y Adaline) · ✅ Taller 2 (MLP y backpropagation) · ✅ Taller 3 (CNN sobre KMNIST, informe, presentación y animación) · ✅ Trabajo 1 (limpieza en casa) · 🔶 Taller 4 (lógica difusa): punto 3 *Wine* entregado; punto 4 *robot* por entregar |
+| Computación Paralela | ✅ Reto 1: tubería CNN (convolución + ReLU + MaxPooling) en OpenACC medida contra la versión en CPU, con documentación técnica y presentación Beamer |
+| Inteligencia de Negocios | ✅ Taller 1: guía NovaRetail 360 (pipeline de limpieza, Power Query, modelo en estrella, SQL, informe y presentación) · 🔶 Proyecto final integrador con Carlos Mora: SQL, esquema estrella, modelo de conversión y simulación Monte Carlo sobre los sorteos de loterías de Colombia (submódulo [`mcic-inteligencia-negocios`](mcic-business-intelligence/4.ProyectoFinal/mcic-inteligencia-negocios/)) |
+| Trabajo de Grado I | ✅ Reunión de establecimiento de actividades (2026-08-06) · 🔶 Borradores de las actas de seguimiento S-01 a S-16 en el formato oficial (.docx) · Compromisos de la asignatura: actas de inicio, seguimiento (mín. 4) y final; avance del 50 % certificado por la directora; viabilidad del grupo de investigación (máx. semana 10) |
 
 ## Enlaces a README de submódulos
 
