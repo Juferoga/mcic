@@ -1,7 +1,7 @@
 
 # 🚧 Semestre II — 2026-3
 
-![Estado](https://img.shields.io/badge/Estado-En_curso-orange?style=flat-square) ![Créditos](https://img.shields.io/badge/Créditos-0%2F16_(en_cursado)-lightgrey?style=flat-square) ![Corte](https://img.shields.io/badge/Corte-11_oct_2026-blue?style=flat-square)
+![Estado](https://img.shields.io/badge/Estado-En_curso-orange?style=flat-square) ![Créditos](https://img.shields.io/badge/Créditos-0%2F16_(en_cursado)-lightgrey?style=flat-square) ![Corte](https://img.shields.io/badge/Corte-23_nov_2026-blue?style=flat-square)
 
 ```text
 ░░░░░░░░░░  0 / 16 créditos acreditados · semestre en curso (inició en agosto de 2026)
@@ -18,13 +18,13 @@
 
 ## Avance por materia
 
-> Corte: **11 de octubre de 2026** (semana 9 de clases). ✅ entregado · 🔶 en curso o por entregar.
+> Corte: **23 de noviembre de 2026** (semana 16 de clases). ✅ entregado · 🔶 en curso o por entregar.
 
 | Materia | Avance |
 |---|---|
-| Inteligencia Computacional | ✅ Taller 1 (Perceptrón y Adaline) · ✅ Taller 2 (MLP y backpropagation) · ✅ Taller 3 (CNN sobre KMNIST, informe, presentación y animación) · ✅ Trabajo 1 (limpieza en casa) · 🔶 Taller 4 (lógica difusa): punto 3 *Wine* entregado; punto 4 *robot* por entregar |
-| Computación Paralela | ✅ Reto 1: tubería CNN (convolución + ReLU + MaxPooling) en OpenACC medida contra la versión en CPU, con documentación técnica y presentación Beamer |
-| Inteligencia de Negocios | ✅ Taller 1: guía NovaRetail 360 (pipeline de limpieza, Power Query, modelo en estrella, SQL, informe y presentación) · 🔶 Proyecto final integrador con Carlos Mora: SQL, esquema estrella, modelo de conversión y simulación Monte Carlo sobre los sorteos de loterías de Colombia (submódulo [`mcic-inteligencia-negocios`](mcic-business-intelligence/4.ProyectoFinal/mcic-inteligencia-negocios/)) |
+| Inteligencia Computacional | ✅ Talleres 1–3 · ✅ Taller 4 (robot difuso) · ✅ Taller 5 (lógica difusa) · ✅ Taller 6 (NAR/NARX sobre PM2.5) · ✅ Tarea 1 (algoritmo genético desde cero) · ✅ Trabajo 1 · 🔶 Proyecto final *riesgo de commits del kernel de Linux con un clasificador difuso-evolutivo*: entregables 1–3 enviados; faltan el 4 (29 nov), la entrega final (3 dic) y la sustentación (4 dic) |
+| Computación Paralela | ✅ Reto 1: tubería CNN en OpenACC (GPU vs. CPU) · ✅ Taller Dask: brecha digital en Colombia · ✅ Reto 2: pipeline NLP en GPU con CUDA + Numba · 🔶 Proyecto final |
+| Inteligencia de Negocios | ✅ Taller 1: guía NovaRetail 360 · ✅ Taller 2: modelamiento dimensional e indicadores · 🔶 Proyecto final con Carlos Mora, *¿En qué invertir para crecer el próximo año?* (CredCorp Capital: SQL, estrella, modelo de conversión y Monte Carlo): informe y presentación listos, falta el cierre (submódulo [`mcic-inteligencia-negocios`](mcic-business-intelligence/4.ProyectoFinal/mcic-inteligencia-negocios/)) |
 | Trabajo de Grado I | ✅ Reunión de establecimiento de actividades (2026-08-06) · 🔶 Borradores de las actas de seguimiento S-01 a S-16 en el formato oficial (.docx) · Compromisos de la asignatura: actas de inicio, seguimiento (mín. 4) y final; avance del 50 % certificado por la directora; viabilidad del grupo de investigación (máx. semana 10) |
 
 ## Enlaces a README de submódulos

@@ -12,13 +12,13 @@
 | [Inteligencia de Negocios](inteligencia-de-negocios.md) | Electiva I | 4 | [`mcic-business-intelligence`](https://github.com/Juferoga/mcic-business-intelligence) |
 | [Trabajo de Grado I](trabajo-de-grado-1.md) | Investigación | 4 | [`mcic-trabajo-grado-1`](https://github.com/Juferoga/mcic-trabajo-grado-1) 🔒 |
 
-## Avance al 11 de octubre de 2026
+## Avance al 23 de noviembre de 2026
 
-<p class="pbar-label">Semana 9 de clases · ✅ entregado · 🔶 en curso o por entregar</p>
+<p class="pbar-label">Semana 16 de clases · ✅ entregado · 🔶 en curso o por entregar</p>
 
 | Materia | Entregado | Pendiente |
 |---------|-----------|-----------|
-| Inteligencia Computacional | ✅ Talleres 1–3, Trabajo 1 y punto 3 del Taller 4 | 🔶 Taller 4 · punto 4 (robot) |
-| Computación Paralela | ✅ Reto 1 | — |
-| Inteligencia de Negocios | ✅ Taller 1 | 🔶 Proyecto final integrador |
+| Inteligencia Computacional | ✅ Talleres 1–6, Tarea 1, Trabajo 1 y entregables 1–3 del proyecto final | 🔶 Entregable 4, entrega final (3 dic) y sustentación (4 dic) |
+| Computación Paralela | ✅ Reto 1, Taller Dask y Reto 2 | 🔶 Proyecto final |
+| Inteligencia de Negocios | ✅ Talleres 1 y 2 · informe y presentación del proyecto final | 🔶 Cierre del proyecto final |
 | Trabajo de Grado I | ✅ Reunión de inicio | 🔶 Actas de seguimiento S-01 a S-16 (borradores) |

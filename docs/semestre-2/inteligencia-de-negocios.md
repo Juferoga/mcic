@@ -7,9 +7,10 @@ Bodegas de datos, ETL y analítica orientada a la toma de decisiones organizacio
 ## Avance
 
 
-<p class="pbar-label">Corte: 11 de octubre de 2026 · ✅ entregado · 🔶 en curso o por entregar</p>
+<p class="pbar-label">Corte: 23 de noviembre de 2026 · ✅ entregado · 🔶 en curso o por entregar</p>
 
 | Entrega | Tema | Estado |
 |---------|------|:------:|
 | Taller 1 | Guía NovaRetail 360: limpieza con pipeline en Python, consultas Power Query (M), modelo en estrella y SQL, informe y presentación. | ✅ |
-| Proyecto final | Proyecto integrador con Carlos Mora sobre los sorteos de loterías de Colombia (corte 2026-09-02): SQL, esquema estrella, modelo de conversión, simulación Monte Carlo y panel en Excel. Repositorio [`mcic-inteligencia-negocios`](https://github.com/Fozzy3/mcic-inteligencia-negocios). | 🔶 |
+| Taller 2 | Laboratorio de modelamiento dimensional e indicadores (NovaRetail 360, con Carlos Mora): esquema estrella, SQL y KPI frente a las metas comerciales. | ✅ |
+| Proyecto final | *¿En qué invertir para crecer el próximo año?* (con Carlos Mora): 20.000 oportunidades comerciales de CredCorp Capital validadas con SQL (DuckDB), modelo en estrella, KPI, modelo de conversión y simulación Monte Carlo de 10.000 escenarios. Informe, ficha técnica y [presentación en línea](https://fozzy3.github.io/mcic-inteligencia-negocios/) listos; falta el cierre del curso. Repositorio [`mcic-inteligencia-negocios`](https://github.com/Fozzy3/mcic-inteligencia-negocios). | 🔶 |

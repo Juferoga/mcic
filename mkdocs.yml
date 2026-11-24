@@ -100,7 +100,7 @@ extra:
         estado: en-curso
         creditos: 0
         total: 16
-        resumen: En curso · corte 11 oct 2026 · créditos al cierre
+        resumen: En curso · corte 23 nov 2026 · créditos al cierre
         doc: semestre-2/index.md
         tema: aurora
         color: "#1291c0"
@@ -112,7 +112,12 @@ extra:
         estado: pendiente
         creditos: 0
         total: 12
-        resumen: Trabajo de Grado II y electiva
+        resumen: Trabajo de Grado II y electiva · preinscripción enviada
+        doc: semestre-3/index.md
+        tema: hex
+        color: "#b49739"
+        color2: "#5cc6ee"
+        escena: Retícula hexagonal
     materias:
       - nombre: Herramientas Matemáticas
         semestre: s1
@@ -158,8 +163,8 @@ extra:
         semestre: s2
         componente: Profundización II
         docente: Cesar Andrey Perdomo Charry
-        entregas: 5
-        siguiente: Taller 4 · punto 4 (robot)
+        entregas: 11
+        siguiente: Proyecto final · entregable 4 y sustentación
         doc: semestre-2/inteligencia-computacional.md
         tema: neural
         color: "#6fdcb0"
@@ -169,7 +174,8 @@ extra:
         semestre: s2
         componente: Profundización III
         docente: Nelson Enrique Vera Parra
-        entregas: 1
+        entregas: 3
+        siguiente: Proyecto final
         doc: semestre-2/computacion-paralela.md
         tema: wavefront
         color: "#ff6b6e"
@@ -179,8 +185,8 @@ extra:
         semestre: s2
         componente: Electiva I
         docente: Nancy Yaneth Gelvez Garcia
-        entregas: 1
-        siguiente: Proyecto final integrador
+        entregas: 2
+        siguiente: Cierre del proyecto final
         doc: semestre-2/inteligencia-de-negocios.md
         tema: contornos
         color: "#e2c66b"
@@ -215,12 +221,20 @@ extra:
       - CNN
       - KMNIST
       - Lógica difusa
+      - Algoritmos genéticos
+      - Series de tiempo
+      - NARX
       - OpenACC
       - GPU
+      - CUDA
+      - Numba
+      - Dask
       - ETL
       - Modelo en estrella
       - Power Query
       - SQL
+      - DuckDB
+      - Monte Carlo
       - LaTeX
       - Beamer
 
@@ -238,4 +252,6 @@ nav:
       - Computación Paralela: semestre-2/computacion-paralela.md
       - Inteligencia de Negocios: semestre-2/inteligencia-de-negocios.md
       - Trabajo de Grado I: semestre-2/trabajo-de-grado-1.md
+  - Semestre III:
+      - semestre-3/index.md
   - Perfil: perfil.md
