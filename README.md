@@ -71,13 +71,13 @@ Detalle completo en [semestre-1/README.md](semestre-1/README.md).
 | Inteligencia Computacional | Profundización II | ✅ Talleres 1–6 (Perceptrón/Adaline, MLP, CNN sobre KMNIST, robot difuso, lógica difusa, NAR/NARX sobre PM2.5), Tarea 1 (algoritmo genético) y Trabajo 1 · 🔶 Proyecto final sobre el riesgo de los commits del kernel de Linux: entregables 1–3 enviados, sustentación el 4 de diciembre | [`mcic-computational-intelligence`](semestre-2/mcic-computational-intelligence/) |
 | Computación Paralela | Profundización III | ✅ Reto 1: tubería CNN en OpenACC (GPU vs. CPU) · ✅ Taller Dask: brecha digital en Colombia · ✅ Reto 2: pipeline NLP en GPU con CUDA + Numba · 🔶 Proyecto final | [`mcic-parallel-computing`](semestre-2/mcic-parallel-computing/) |
 | Inteligencia de Negocios | Electiva I | ✅ Talleres 1 y 2 (NovaRetail 360: limpieza y modelamiento dimensional) · 🔶 Proyecto final con Carlos Mora sobre CredCorp Capital (SQL, estrella, modelo de conversión y Monte Carlo): informe y presentación listos | [`mcic-business-intelligence`](semestre-2/mcic-business-intelligence/) |
-| Trabajo de Grado I | Investigación | 🔶 Borradores de 16 actas de seguimiento en el formato oficial (.docx) y gestión administrativa del programa | [`mcic-trabajo-grado-1`](semestre-2/mcic-trabajo-grado-1/) 🔒 · técnico en [`mcic-tesis`](https://github.com/Juferoga/mcic-tesis) 🔒 |
+| Trabajo de Grado I | Investigación | ✅ Documentos radicados ante la coordinación el 20 de noviembre: carta de viabilidad del grupo ComplexUD, actas firmadas y reporte de nota · 🔶 Nota final: la carga la directora antes del 11 de diciembre | [`mcic-trabajo-grado-1`](semestre-2/mcic-trabajo-grado-1/) 🔒 · técnico en [`mcic-tesis`](https://github.com/Juferoga/mcic-tesis) 🔒 |
 
 Detalle y cronograma de matrícula en [semestre-2/README.md](semestre-2/README.md).
 
 ## 🔬 Trabajo de grado
 
-Proyecto de investigación en curso, bajo la dirección de la Dra. Deicy Alvarado Nieto y la codirección de la MsC. Isabel Amaya Barrera. Su contenido se mantiene en repositorios privados 🔒.
+Proyecto de investigación en curso, bajo la dirección de la Dra. Deicy Alvarado Nieto y la codirección de la MSc. Isabel Amaya Barrera, en el grupo de investigación ComplexUD. Su contenido se mantiene en repositorios privados 🔒.
 
 ---
 
