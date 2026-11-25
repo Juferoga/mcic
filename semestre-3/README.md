@@ -39,4 +39,4 @@ En el énfasis solo quedaban **Big Data** y **Robótica**: Analítica de Datos, 
 | por definir | Publicación de la oferta oficial de asignaturas | ⏳ |
 | por definir | Inscripción de espacios académicos y generación de recibo | ⏳ |
 | por definir | Pago y oficialización | ⏳ |
-| por definir | Inicio de clases | ⏳ |
+| 1 feb 2027 | Inicio de clases (Res. CA 063 de 2026) | ⏳ |
