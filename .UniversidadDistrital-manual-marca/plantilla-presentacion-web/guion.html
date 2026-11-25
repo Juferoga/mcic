@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guion · Título de la presentación</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Tipografía institucional UD: Cambria (títulos) y Times New Roman (texto); Caladea y Tinos son sus equivalentes libres. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400&family=Tinos:ital,wght@0,400;0,700;1,400&family=Cousine:wght@400;700&display=swap">
+<style>
+/* Teleprompter del presentador. Izquierda: los marcos en orden, el reloj y los controles. Derecha: un bloque por
+   pulsación de → en la presentación; el bloque actual se ve resaltado. Se abre con G desde la presentación. */
+:root {
+  --ink: #1f1d1e;        /* fondo oscuro de sala (sable UD oscurecido) */
+  --panel: #2a2829;
+  --line: #3d3a3b;
+  --text: #eeeceb;       /* blanco cálido, descansa la vista */
+  --dim: #98999a;        /* plata UD */
+  --rojo: #ed3237;       /* gules UD: marca cada pulsación */
+  --oro: #c9b062;        /* oro UD aclarado para fondo oscuro: acciones en escena */
+  --verde: #2fc07a;      /* sinople UD aclarado */
+  --display: Cambria, Caladea, Georgia, serif;
+  --read: "Times New Roman", Tinos, Times, serif;
+  --mono: Cousine, "Courier New", ui-monospace, Menlo, monospace;
+  --tam: 30px;           /* tamaño de lectura, se cambia con A− / A+ */
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--ink); color: var(--text); font-family: var(--read); }
+.app { display: grid; grid-template-columns: 280px minmax(0, 1fr); height: 100%; }
+
+/* ---------- columna izquierda ---------- */
+.rail { border-right: 1px solid var(--line); padding-block: 20px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: 16px; display: flex; flex-direction: column; gap: 18px; overflow-y: auto; }
+.rail h1 { font-family: var(--display); font-weight: 700; color: #fff; border-left: 4px solid var(--rojo); padding-left: 10px; font-size: 22px; line-height: 1.15; margin: 0; text-wrap: balance; }
+.rail .sub { color: var(--dim); font-size: 14px; margin: 4px 0 0; }
+.reloj { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; gap: 8px; }
+.reloj .t { font-family: var(--mono); font-size: 34px; font-variant-numeric: tabular-nums; line-height: 1; }
+.reloj .meta { font-size: 13px; color: var(--dim); }
+.reloj .meta b { color: var(--text); font-weight: 400; font-family: var(--mono); }
+.reloj .meta.tarde b { color: var(--rojo); }
+.fila-botones { display: flex; gap: 6px; flex-wrap: wrap; }
+button { font: inherit; color: var(--text); background: transparent; border: 1px solid var(--line); border-radius: 8px; padding: 6px 11px; cursor: pointer; font-size: 14px; }
+button:hover { border-color: var(--dim); }
+button:focus-visible { outline: 2px solid var(--oro); outline-offset: 2px; }
+button.primario { border-color: var(--rojo); }
+.marcos { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.marcos li button { width: 100%; text-align: left; border: 0; border-radius: 6px; padding: 7px 10px; display: grid; grid-template-columns: 22px 1fr auto; gap: 8px; align-items: baseline; color: var(--dim); }
+.marcos li button .n { font-family: var(--mono); font-size: 12px; }
+.marcos li button .d { font-family: var(--mono); font-size: 12px; }
+.marcos li button.hecho { color: #a9b0bb; }
+.marcos li button.actual { background: var(--panel); color: var(--text); }
+.marcos li button.actual .n { color: var(--rojo); }
+.marcos li.cap { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--oro); padding: 12px 10px 4px; }
+.marco-titulo .quien { text-transform: none; letter-spacing: 0; font-family: var(--read); font-size: 14px; color: var(--rojo); }
+.sync { font-size: 13px; margin: 0; color: var(--dim); }
+.sync.ok { color: var(--verde); }
+.ayuda { font-size: 13px; color: var(--dim); line-height: 1.5; margin: 0; }
+kbd { font-family: var(--mono); font-size: 12px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; }
+
+/* ---------- guion ---------- */
+.guion { overflow-y: auto; scroll-behavior: smooth; padding-block: 28px 40vh; padding-left: 40px; padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+.guion-in { max-width: 34em; display: grid; gap: 14px; font-size: var(--tam); }
+.marco-titulo { font-family: var(--mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin-top: 1.4em; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.marco-titulo:first-child { margin-top: 0; }
+.marco-titulo b { color: var(--text); font-weight: 700; letter-spacing: .06em; }
+.marco-titulo .pantalla { text-transform: none; letter-spacing: 0; color: var(--oro); font-family: var(--read); font-size: 14px; }
+.bloque { border-left: 3px solid transparent; padding: 10px 0 10px 18px; cursor: pointer; opacity: .38; transition: opacity .25s, border-color .25s; }
+.bloque:hover { opacity: .6; }
+.bloque.actual { opacity: 1; border-left-color: var(--rojo); }
+.bloque.siguiente { opacity: .6; }
+.bloque p { margin: 0; line-height: 1.5; font-size: 1em; }
+.bloque p + p { margin-top: .5em; }
+.bloque b { color: #fff; }
+.bloque .haz { display: block; font-style: italic; color: var(--oro); font-size: .62em; margin-top: .5em; }
+.pulsa { margin-top: .55em; display: inline-flex; gap: 8px; align-items: center; font-family: var(--mono); font-size: 13px; color: var(--dim); }
+.pulsa i { font-style: normal; color: var(--rojo); font-size: 16px; }
+.bloque.actual .pulsa { color: #c3c8d0; }
+.bloque.entrega { border-left-style: dashed; }
+.bloque.entrega .pulsa { color: var(--oro); }
+
+/* ---------- referencia rápida ---------- */
+.referencia { margin-top: 3em; display: grid; gap: 20px; font-size: 17px; }
+.referencia h2 { font-family: var(--display); font-weight: 700; font-size: 24px; margin: 0; }
+.cifras { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.cifras div { background: var(--panel); padding: 12px 14px; }
+.cifras b { display: block; font-family: var(--mono); font-size: 20px; font-variant-numeric: tabular-nums; }
+.cifras span { color: var(--dim); font-size: 14px; }
+.preguntas { display: grid; gap: 10px; }
+.preguntas details { border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; background: var(--panel); }
+.preguntas summary { cursor: pointer; font-weight: 700; }
+.preguntas p { margin: 8px 0 0; line-height: 1.55; color: #cfd3da; }
+
+@media (max-width: 760px) {
+  .app { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+  .rail { border-right: 0; border-bottom: 1px solid var(--line); padding-right: max(16px, env(safe-area-inset-right, 0px)); max-height: 42vh; }
+  .marcos { display: none; }
+  .guion { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  :root { --tam: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { .guion { scroll-behavior: auto; } .bloque { transition: none; } }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <aside class="rail">
+    <div>
+      <h1>Guion</h1>
+      <p class="sub">Título de la presentación · Persona A y Persona B</p>
+    </div>
+    <div class="reloj">
+      <div class="t" id="tiempo">0:00</div>
+      <div class="meta" id="meta">Meta total: <b>—</b></div>
+      <div class="fila-botones">
+        <button class="primario" id="btn-reloj" type="button">Iniciar</button>
+        <button id="btn-cero" type="button">Reiniciar</button>
+      </div>
+    </div>
+    <div class="fila-botones" aria-label="Tamaño de letra">
+      <button id="btn-menos" type="button" aria-label="Letra más pequeña">A−</button>
+      <button id="btn-mas" type="button" aria-label="Letra más grande">A+</button>
+      <button id="btn-ant" type="button">← Atrás</button>
+      <button id="btn-sig" type="button">Siguiente →</button>
+    </div>
+    <ol class="marcos" id="marcos"></ol>
+    <p class="sync" id="sync">○ Sin conexión con la presentación. Ábrela en otra ventana de este mismo navegador.</p>
+    <p class="ayuda">Cada bloque es <b>una pulsación de <kbd>→</kbd></b> en la presentación. Aquí: <kbd>→</kbd> o <kbd>espacio</kbd> avanza, <kbd>←</kbd> retrocede, clic en un bloque para saltar. <span style="color:var(--oro)">Lo dorado</span> es lo que haces, no lo que dices.</p>
+  </aside>
+
+  <main class="guion" id="guion">
+    <div class="guion-in" id="guion-in"></div>
+    <section class="referencia guion-in" aria-label="Referencia rápida">
+      <h2>Cifras a la mano</h2>
+      <div class="cifras">
+        <div><b>1.250.000</b><span>registros procesados</span></div>
+        <div><b>14</b><span>fuentes de datos</span></div>
+        <div><b>93,4 %</b><span>exactitud</span></div>
+        <div><b>2,75 s</b><span>por lote</span></div>
+      </div>
+      <h2>Si preguntan…</h2>
+      <div class="preguntas">
+        <details><summary>¿De dónde salen los datos?</summary><p>Respuesta preparada: fuente, fecha de corte y licencia.</p></details>
+        <details><summary>¿Qué limitaciones tiene el método?</summary><p>Respuesta preparada: supuestos, sesgos y lo que quedaría por hacer.</p></details>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+// Guion de la presentación. Un objeto por marco, en el orden de index.html:
+//   id:      el id del <section class="frame"> (así se sincroniza con la presentación)
+//   cap:     (opcional) rótulo de capítulo en la columna izquierda
+//   quien:   quién habla
+//   marco:   nombre corto del marco · pantalla: qué se ve · meta: segundos previstos
+//   bloques: uno por pulsación de → (número de data-paso del marco + 1). Cada bloque:
+//            t: párrafos (admite <b>), haz: (opcional) acción en escena, pulsa: qué pasa al pulsar →
+const A = "Persona A", B = "Persona B";
+const GUION = [
+  { id: "portada", cap: "Inicio", quien: A, marco: "Portada", pantalla: "título y autores", meta: 30, bloques: [
+    { t: ["Buenos días. Somos <b>Nombre Apellido</b> y <b>Nombre Apellido</b>, y les vamos a presentar <b>el título de la presentación</b>."],
+      haz: "Esperar a que la cámara termine de llegar.", pulsa: "va a «Agenda»" },
+  ]},
+  { id: "agenda", quien: A, marco: "Agenda", pantalla: "3 capítulos", meta: 30, bloques: [
+    { t: ["La presentación tiene tres partes."], pulsa: "aparece «Contexto»" },
+    { t: ["Primero, el <b>contexto</b>: el problema y por qué importa."], pulsa: "aparece «Desarrollo»" },
+    { t: ["Después, el <b>desarrollo</b>: método, resultados y proceso."], pulsa: "aparece «Cierre»" },
+    { t: ["Y cerramos con las conclusiones y las preguntas."], pulsa: "va al capítulo 1" },
+  ]},
+  { id: "c1", cap: "Capítulo 1 · Contexto", quien: A, marco: "Contexto", pantalla: "portada de capítulo", meta: 20, bloques: [
+    { t: ["Capítulo uno. La pregunta que nos hicimos fue…"], pulsa: "va a «Texto y lista»" },
+  ]},
+  { id: "texto", quien: A, marco: "Texto y lista", pantalla: "tres viñetas", meta: 60, bloques: [
+    { t: ["La idea principal de este marco, dicha en una frase.", "Luego los tres puntos, uno por uno."], pulsa: "va a «Cifras»" },
+  ]},
+  { id: "cifras", quien: B, marco: "Cifras", pantalla: "4 contadores", meta: 45, bloques: [
+    { t: ["Procesamos <b>un millón doscientos cincuenta mil registros</b> de <b>catorce fuentes</b>."], haz: "Esperar a que terminen los contadores.", pulsa: "va al capítulo 2" },
+  ]},
+  { id: "c2", cap: "Capítulo 2 · Desarrollo", quien: B, marco: "Desarrollo", pantalla: "portada de capítulo", meta: 20, bloques: [
+    { t: ["Capítulo dos: qué hicimos y qué encontramos."], pulsa: "va a «Gráfico»" },
+  ]},
+  { id: "grafico", quien: B, marco: "Gráfico", pantalla: "barras por categoría", meta: 60, bloques: [
+    { t: ["Este gráfico muestra el indicador por categoría."], pulsa: "resalta A" },
+    { t: ["A es el valor más bajo: <b>42 %</b>."], pulsa: "resalta B" },
+    { t: ["B sube a <b>68 %</b>."], pulsa: "resalta C" },
+    { t: ["C se mantiene en <b>55 %</b>."], pulsa: "resalta D" },
+    { t: ["Y D es el más alto: <b>81 %</b>."], pulsa: "va a «Paso a paso»" },
+  ]},
+  { id: "pasos", quien: B, marco: "Paso a paso", pantalla: "4 cajas", meta: 60, bloques: [
+    { t: ["El proceso tiene cuatro pasos."], pulsa: "paso 1" },
+    { t: ["Primero, <b>recolectar</b>."], pulsa: "paso 2" },
+    { t: ["Segundo, <b>limpiar</b>."], pulsa: "paso 3" },
+    { t: ["Tercero, <b>analizar</b>."], pulsa: "paso 4 e idea clave" },
+    { t: ["Y por último, <b>comunicar</b>. La idea clave es…"], pulsa: "va a «Gracias»" },
+  ]},
+  { id: "cierre", cap: "Cierre", quien: A, marco: "Gracias", pantalla: "gracias", meta: 15, bloques: [
+    { t: ["Muchas gracias. ¿Preguntas?"], haz: "Pulsar O para mostrar el recorrido completo mientras responden.", pulsa: "fin" },
+  ]},
+];
+
+const $ = (s) => document.querySelector(s);
+const plano = [];
+GUION.forEach((m, mi) => m.bloques.forEach((b, bi) => plano.push({ ...b, mi, bi })));
+const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+const metaTotal = GUION.reduce((a, m) => a + m.meta, 0);
+$("#meta").innerHTML = `Meta total: <b>${fmt(metaTotal)}</b> · este marco: <b>—</b>`;
+
+// Pintar el guion y la lista de marcos
+let html = "", i = -1;
+GUION.forEach((m, mi) => {
+  html += `<h2 class="marco-titulo" id="m${mi}"><span>${String(mi + 1).padStart(2, "0")}</span><b>${m.marco}</b><span class="quien">${m.quien}</span><span class="pantalla">en pantalla: ${m.pantalla}</span></h2>`;
+  m.bloques.forEach((b) => {
+    i += 1;
+    html += `<div class="bloque${b.entrega ? " entrega" : ""}" data-i="${i}" tabindex="-1">${b.t.map((x) => `<p>${x}</p>`).join("")}${b.haz ? `<span class="haz">Haz: ${b.haz}</span>` : ""}<span class="pulsa"><i>→</i> ${b.pulsa}</span></div>`;
+  });
+});
+$("#guion-in").innerHTML = html;
+$("#marcos").innerHTML = GUION.map((m, mi) => `${m.cap ? `<li class="cap">${m.cap} · ${m.quien}</li>` : ""}<li><button type="button" data-m="${mi}"><span class="n">${String(mi + 1).padStart(2, "0")}</span><span>${m.marco}</span><span class="d">${fmt(m.meta)}</span></button></li>`).join("");
+
+const bloques = [...document.querySelectorAll(".bloque")];
+const guardar = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+const leer = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+
+let actual = Math.min(+(leer("guion-actual") || 0), plano.length - 1);
+function ir(i, desplazar = true) {
+  actual = Math.max(0, Math.min(plano.length - 1, i));
+  bloques.forEach((b, j) => { b.classList.toggle("actual", j === actual); b.classList.toggle("siguiente", j === actual + 1); });
+  const mi = plano[actual].mi;
+  document.querySelectorAll("#marcos button[data-m]").forEach((b) => { b.classList.toggle("actual", +b.dataset.m === mi); b.classList.toggle("hecho", +b.dataset.m < mi); });
+  if (desplazar) bloques[actual].scrollIntoView({ block: "center" });
+  guardar("guion-actual", actual);
+  pintarMeta();
+}
+bloques.forEach((b) => b.addEventListener("click", () => ir(+b.dataset.i)));
+document.querySelectorAll("#marcos button[data-m]").forEach((b) => b.addEventListener("click", () => ir(plano.findIndex((p) => p.mi === +b.dataset.m))));
+$("#btn-sig").addEventListener("click", () => ir(actual + 1));
+$("#btn-ant").addEventListener("click", () => ir(actual - 1));
+addEventListener("keydown", (e) => {
+  if (e.target.closest("summary, input")) return;
+  if (["ArrowRight", "ArrowDown", " ", "PageDown"].includes(e.key)) { e.preventDefault(); ir(actual + 1); }
+  if (["ArrowLeft", "ArrowUp", "PageUp"].includes(e.key)) { e.preventDefault(); ir(actual - 1); }
+});
+
+// Tamaño de letra
+let tam = +(leer("guion-tam") || 0) || null;
+function aplicarTam() { if (tam) document.documentElement.style.setProperty("--tam", tam + "px"); }
+$("#btn-mas").addEventListener("click", () => { tam = Math.min(48, (tam || parseInt(getComputedStyle(document.documentElement).getPropertyValue("--tam"))) + 2); aplicarTam(); guardar("guion-tam", tam); });
+$("#btn-menos").addEventListener("click", () => { tam = Math.max(16, (tam || parseInt(getComputedStyle(document.documentElement).getPropertyValue("--tam"))) - 2); aplicarTam(); guardar("guion-tam", tam); });
+aplicarTam();
+
+// Reloj: tiempo transcurrido frente a la meta total y a la meta acumulada del marco actual.
+let inicio = 0, acumulado = 0, corriendo = false, wake = null;
+function transcurrido() { return acumulado + (corriendo ? (performance.now() - inicio) / 1000 : 0); }
+function pintarMeta() {
+  const t = transcurrido();
+  $("#tiempo").textContent = fmt(t);
+  const mi = plano[actual].mi;
+  const hasta = GUION.slice(0, mi + 1).reduce((a, m) => a + m.meta, 0);
+  const meta = $("#meta");
+  meta.classList.toggle("tarde", corriendo && t > hasta + 10);
+  meta.innerHTML = `Meta total: <b>${fmt(metaTotal)}</b> · terminar este marco hacia <b>${fmt(hasta)}</b>`;
+}
+setInterval(() => { if (corriendo) pintarMeta(); }, 500);
+$("#btn-reloj").addEventListener("click", async () => {
+  if (corriendo) { acumulado = transcurrido(); corriendo = false; $("#btn-reloj").textContent = "Seguir"; wake?.release?.(); wake = null; }
+  else {
+    inicio = performance.now(); corriendo = true; $("#btn-reloj").textContent = "Pausar";
+    try { wake = await navigator.wakeLock?.request("screen"); } catch (e) { wake = null; }
+  }
+  pintarMeta();
+});
+$("#btn-cero").addEventListener("click", () => { acumulado = 0; inicio = performance.now(); pintarMeta(); });
+
+// Seguir a la presentación: en cada movimiento emite {id, paso} por BroadcastChannel (mismo navegador y mismo sitio).
+const canal = "BroadcastChannel" in window ? new BroadcastChannel("presentacion") : null;
+canal?.addEventListener("message", (e) => {
+  const { id, paso } = e.data || {};
+  if (!id) return;
+  const sync = $("#sync");
+  sync.classList.add("ok");
+  const i = plano.findIndex((p) => GUION[p.mi].id === id && p.bi === paso);
+  sync.textContent = i < 0 ? "● Sincronizado · este marco no está en el guion" : `● Sincronizado · habla ${GUION[plano[i].mi].quien}`;
+  if (i >= 0 && i !== actual) ir(i);
+});
+canal?.postMessage({ pedir: true });
+
+ir(actual);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "plantilla-presentacion-web-ud",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Plantilla de presentación web tipo Prezi con la imagen institucional de la Universidad Distrital",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.4.6"
+  },
+  "dependencies": {
+    "gsap": "^3.15.1"
+  }
+}

@@ -39,3 +39,7 @@ Los colores institucionales se deben mantener precisos para respetar su carácte
 * **Versiones de aplicación:** El logotipo y sello están autorizados para ser desplegados en "versión en línea" (monocromática), "versión invertida" (sobre fondos oscuros) o en "versión color". Además, cuenta con disposiciones horizontales y verticales.
 * **Restricciones de Manipulación:** Está prohibido el uso de cualquier efecto que altere la visión correcta de los elementos.
 * **Prohibiciones visuales:** No se debe permitir desintegración, uso parcial, difuminado, sombreado, texturizado, tramado, animación, perspectivas o modificaciones en sus proporciones (ensanchados o alargados). Debe mantenerse completo y respetarse sus proporciones originales.
+
+## Plantillas
+* **LaTeX (presentación Beamer e informe):** [`plantillas-latex/`](plantillas-latex/README.md).
+* **Presentación web (Vite + GSAP, tipo Prezi):** [`plantilla-presentacion-web/`](plantilla-presentacion-web/README.md). Usa los mismos fondos de portada, contenido y cierre, la paleta y la tipografía de este manual.

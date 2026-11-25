@@ -1,0 +1,8 @@
+{
+  "muestra": {
+    "registros": 1250000,
+    "fuentes": 14,
+    "exactitud": 93.4,
+    "tiempo_s": 2.75
+  }
+}
