@@ -22,3 +22,6 @@
 [submodule "general/session-recorder"]
 	path = general/session-recorder
 	url = git@github.com:Juferoga/session-recorder.git
+[submodule ".UniversidadDistrital-manual-marca"]
+	path = .UniversidadDistrital-manual-marca
+	url = git@github.com:Juferoga/ud-manual-marca.git

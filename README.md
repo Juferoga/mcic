@@ -24,7 +24,7 @@ Compendio de materiales, trabajos y resultados de la **Maestría en Ciencias de 
 - `semestre-2/` — materiales y submódulos del segundo semestre. Ver [semestre-2/README.md](semestre-2/README.md).
 - `general/` — herramientas transversales: [`session-recorder`](general/session-recorder/) (submódulo), [`marca-mcic/`](general/marca-mcic/README.md) (kit vectorial del logo) y `templates/`.
 - `docs/` + `overrides/` — micrositio en [juferoga.github.io/mcic](https://juferoga.github.io/mcic/) (MkDocs Material con tema propio).
-- `.UniversidadDistrital-manual-marca/` — manual de marca de la UD y [plantillas LaTeX](.UniversidadDistrital-manual-marca/plantillas-latex/README.md) (informe y presentación) usadas en las entregas.
+- `.UniversidadDistrital-manual-marca/` — submódulo [ud-manual-marca](https://github.com/Juferoga/ud-manual-marca) ([Storybook](https://juferoga.github.io/ud-manual-marca/)): manual de marca de la UD, guía de imagen digital 2026 con el kit vectorial de la marca U. Distrital y [plantillas LaTeX](.UniversidadDistrital-manual-marca/plantillas-latex/README.md) (informe y presentación, institucional y digital) usadas en las entregas.
 - `semestre-3/` — tercer semestre (2027-1): preinscripción y cronograma. Ver [semestre-3/README.md](semestre-3/README.md).
 - `tesis/` — trabajo de grado (repositorio privado).
 
@@ -100,7 +100,7 @@ mcic/
 │   ├── marca-mcic/              kit vectorial: logo, wordmark, favicon (SVG · PDF · PNG)
 │   └── templates/               plantilla LaTeX de tareas
 ├── docs/ · overrides/           micrositio (MkDocs Material + tema propio)
-├── .UniversidadDistrital-manual-marca/   manual de marca + plantillas LaTeX
+├── .UniversidadDistrital-manual-marca/   manual de marca + plantillas LaTeX (submódulo ud-manual-marca)
 └── tesis/                       🔜 submódulo mcic-tesis (privado)
 ```
 
